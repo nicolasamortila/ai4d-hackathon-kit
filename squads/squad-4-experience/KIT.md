@@ -25,10 +25,10 @@ Construire la **tuile « Gérer ma réservation »** et la **carte** de late che
 
 | Profil | Chapeau proposé |
 |---|---|
-| Designer · Design transverse | Specification Engineer (pilote le Discover) |
-| SA BFF · Stay | Decision Guarantor |
-| SA Web JS · Post Booking | Context Engineer |
-| Dev Android · Stay | Agentic Workflow Orchestrator |
+| Designer | Specification Engineer (pilote le Discover) |
+| SA BFF | Decision Guarantor |
+| SA Web JS | Context Engineer |
+| Dev Android | Agentic Workflow Orchestrator |
 
 Répartition proposée par l'animation ; vous l'ajustez au cadrage (0:00 à 0:30). En fin de session : l'effort estimé de votre chapeau était-il réaliste ?
 

@@ -25,10 +25,10 @@ Construire l'**API d'offre** : pour une réservation donnée, dire si elle est �
 
 | Profil | Chapeau proposé |
 |---|---|
-| PO · Distrib API | Specification Engineer |
-| TL · Data Platform | Decision Guarantor |
-| SA iOS · Stay | Agentic Workflow Orchestrator |
-| Data analyst · Revenue DATA | Context Engineer |
+| PO | Specification Engineer |
+| TL | Decision Guarantor |
+| SA iOS | Agentic Workflow Orchestrator |
+| Data analyst | Context Engineer |
 
 Répartition proposée par l'animation ; vous l'ajustez au cadrage (0:00 à 0:30). En fin de session : l'effort estimé de votre chapeau était-il réaliste ?
 

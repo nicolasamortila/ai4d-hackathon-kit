@@ -25,10 +25,10 @@ Construire l'**encaissement du supplément**, en ligne (débit immédiat via le 
 
 | Profil | Chapeau proposé |
 |---|---|
-| PO · Customer Knowledge | Specification Engineer |
-| TL · Distrib API | Decision Guarantor |
-| SA Android · Stay | Agentic Workflow Orchestrator |
-| Scrum Master · Paiement | Context Engineer |
+| PO | Specification Engineer |
+| TL | Decision Guarantor |
+| SA Android | Agentic Workflow Orchestrator |
+| Scrum Master | Context Engineer |
 
 Répartition proposée par l'animation ; vous l'ajustez au cadrage (0:00 à 0:30). En fin de session : l'effort estimé de votre chapeau était-il réaliste ?
 

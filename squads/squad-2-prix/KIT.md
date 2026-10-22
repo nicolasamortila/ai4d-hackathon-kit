@@ -25,10 +25,10 @@ Construire la **règle de prix** : le plancher et le plafond du supplément selo
 
 | Profil | Chapeau proposé |
 |---|---|
-| PO · Distrib API | Specification Engineer |
-| TL BFF · Stay | Decision Guarantor |
-| SA AEM · Offers | Agentic Workflow Orchestrator |
-| Sr Data Eng. · Revenue DATA | Context Engineer |
+| PO | Specification Engineer |
+| TL BFF | Decision Guarantor |
+| SA AEM | Agentic Workflow Orchestrator |
+| Sr Data Eng. | Context Engineer |
 
 Répartition proposée par l'animation ; vous l'ajustez au cadrage (0:00 à 0:30). En fin de session : l'effort estimé de votre chapeau était-il réaliste ?
 
