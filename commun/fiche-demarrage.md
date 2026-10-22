@@ -27,8 +27,8 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
 
 1. **Ouvrez le dépôt de votre squad** dans votre navigateur (adresse affichée sur l'écran commun et sur votre table) et connectez-vous à GitHub.
 2. Cliquez sur le bouton vert **Code**, puis sur l'onglet **Codespaces**, puis sur **…** → **New with options…**.
-3. Sur la page qui s'ouvre, collez la **clé agent de la squad** (remise sur votre table) dans le champ `ANTHROPIC_API_KEY`.
-   Laissez `ANTHROPIC_BASE_URL` vide, sauf si le support vous dit le contraire. Cliquez sur **Create codespace**.
+3. Sur la page qui s'ouvre, collez la **clé agent de la squad** dans le champ indiqué sur la **carte de squad** posée sur votre table
+   (en général `ANTHROPIC_API_KEY`). Laissez les autres champs vides, sauf indication de la carte. Cliquez sur **Create codespace**.
 4. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre dans l'onglet ; en bas, un terminal affiche l'installation.
    C'est prêt quand il écrit **« ✓ Codespace prêt »**.
 5. **Parlez à l'agent** : cliquez sur l'icône Claude dans la barre de gauche (ou tapez `claude` dans le terminal puis Entrée).
@@ -37,6 +37,27 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
    > Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons.
 
    S'il cite votre volet et les contrats des autres squads, vous êtes prêt.
+
+### Travailler avec Claude dans le Codespace
+
+**Où lui parler** : le panneau Claude (icône dans la barre de gauche). On lui écrit en français, comme dans une messagerie.
+Il lit les fichiers, propose des modifications et vous demande votre accord avant de les appliquer : lisez, puis acceptez ou refusez.
+
+**Les commandes Spec Kit** se tapent dans le même panneau : `/speckit.specify`, `/speckit.clarify`… (le mode opératoire indique laquelle à quel moment).
+
+**Des phrases toutes faites**, que l'agent sait exécuter pour vous, sans que vous touchiez au terminal :
+
+| Vous voulez | Écrivez à Claude |
+|---|---|
+| Avoir le contexte à jour | « Récupère les dernières versions du Context Nexus et réassemble notre contexte. » |
+| Savoir ce qui a changé | « Qu'est-ce qui a changé dans les contrats des autres squads depuis tout à l'heure ? » |
+| Démarrer la Business Intent Spec | « Copie le gabarit business-intent dans le dossier de notre squad et aide-moi à remplir les 5 champs. Pose-moi les questions. » |
+| Partager votre travail | « Publie mes changements dans le Context Nexus. » |
+| Vérifier avant une gate | « Vérifie que notre squad passe le check de context-assemble. » |
+
+**Une règle d'équipe** : chaque Codespace est une copie séparée. Ce que vous écrivez reste invisible pour les autres tant que ce n'est pas **publié**.
+- La spec et le code vivent dans **un seul Codespace, celui de l'Orchestrator**, affiché sur l'écran de la table.
+- Dans votre Codespace, vous lisez le contexte et vous préparez vos textes (Business Intent, spec, contrat), puis vous demandez à Claude de les **publier**.
 
 ### Bon à savoir
 

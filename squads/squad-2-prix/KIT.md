@@ -6,7 +6,7 @@
 ## Démarrer en 5 étapes
 
 1. **Avant le 23/10** : cette fiche lue, votre chapeau repéré ci-dessous, et votre façon d'être prêt choisie (`commun/03-prerequis-poste.md`) : **Codespace** (un compte GitHub, rien à installer) ou **installation en une ligne** sur votre poste. Deux postes prêts par squad suffisent.
-2. **À 12 h 30** : en Codespace, ouvrir `starter-squad-2-prix` → **Code → Codespaces → … → New with options…**, coller la clé de la squad dans `ANTHROPIC_API_KEY`, puis **Create codespace** (pas à pas : `commun/fiche-demarrage.md`, voie A) (le clonage et l'étape 3 se font tout seuls). Sur votre poste : cloner côte à côte `context-nexus` et `starter-squad-2-prix` dans `~/hackathon/`, brancher la clé agent de la squad.
+2. **À 12 h 30** : en Codespace, ouvrir `starter-squad-2-prix` → **Code → Codespaces → … → New with options…**, coller la clé de la squad dans le champ indiqué sur la carte de squad, puis **Create codespace** (pas à pas : `commun/fiche-demarrage.md`, voie A) (le clonage et l'étape 3 se font tout seuls). Sur votre poste : cloner côte à côte `context-nexus` et `starter-squad-2-prix` dans `~/hackathon/`, brancher la clé agent de la squad.
 3. **Assembler votre contexte** :
    ```bash
    cd ~/hackathon/context-nexus
@@ -14,6 +14,13 @@
    ```
 4. **Vérifier l'agent** : dans `starter-squad-2-prix`, lancer `claude` et demander « Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons ». Taper `/speckit` pour voir les commandes.
 5. **À 14h05, Discover** : le Context Engineer lit les contrats voisins, le Specification Engineer copie `gabarits/business-intent.md` dans `teams/squad-2-prix/intent/` et tient la plume.
+
+## Travailler à quatre
+
+- **Un poste ou Codespace pilote** : celui de l'Orchestrator (SA AEM), affiché sur l'écran de la table. La spec, le plan et le code y vivent.
+- **Les autres** lisent le contexte et préparent leurs textes (Business Intent, spec, contrat) sur leur propre poste ou Codespace, puis les **publient** dans le Context Nexus. Profil non technique : demandez à Claude « Publie mes changements dans le Context Nexus ».
+- **Le Context Engineer** (Sr Data Eng.) lance `context-assemble` au début de chaque bloc et annonce à la squad ce qui a changé.
+- Chaque Codespace est une copie séparée : ce qui n'est pas publié reste invisible pour les autres.
 
 ## Votre mission
 

@@ -22,5 +22,9 @@ S'il manque ou date du bloc précédent, demande à la squad de lancer :
 - Chaque critère d'acceptance de la spec a au moins un test nommé qui le référence (ENG-04).
 - Toute fonctionnalité est derrière un feature flag désactivé par défaut. Tu ne bascules jamais un flag toi-même.
 - Paiement en ligne = périmètre PCI. Ne génère jamais de champ, de log ou de fixture contenant un numéro de carte, un CVV ou une date d'expiration. Tout code qui déclenche un débit doit être signé par un humain nommé (`Signed-off-by:`) avant merge : rappelle-le à la squad.
+- Certains membres de la squad ne sont pas développeurs. Quand on te le demande en langage courant, fais-le pour eux et explique en une phrase ce que tu as fait :
+  - « récupère les dernières versions » / « mets à jour le contexte » : `git pull` dans `../context-nexus`, puis `node ../context-nexus/tools/context-assemble.mjs --squad squad-3-paiement --out .context/brief.md`, et résume ce qui a changé ;
+  - « publie mes changements » : dans `../context-nexus`, `git add teams/squad-3-paiement`, commit avec un message clair, `git pull --rebase`, `git push`. Ne publie jamais hors de `teams/squad-3-paiement/`. Avant, vérifie le frontmatter (version incrémentée, `last-validated`, épinglages) et montre ce qui sera publié ;
+  - « vérifie qu'on passe la gate » : `context-assemble --check`, tests du starter, puis la liste de ce qui manque.
 - Langue : code en anglais, specs et documents du Nexus en français.
 - Sois économe en tokens : la squad a un budget suivi en direct. Préfère lire un fichier précis plutôt que tout le dépôt.

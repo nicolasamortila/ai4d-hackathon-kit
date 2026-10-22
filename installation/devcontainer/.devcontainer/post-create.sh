@@ -19,7 +19,7 @@ command -v claude >/dev/null || curl -fsSL https://claude.ai/install.sh | bash
 grep -q 'Hackathon Champions' "$HOME/.bashrc" 2>/dev/null || cat >> "$HOME/.bashrc" <<'RC'
 # Hackathon Champions
 export PATH="$HOME/.local/bin:$PATH"
-[ -z "${ANTHROPIC_BASE_URL:-}" ] && unset ANTHROPIC_BASE_URL
+for v in ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN ANTHROPIC_BASE_URL; do [ -z "${!v:-}" ] && unset "$v"; done
 RC
 
 echo "▸ Context Nexus"
