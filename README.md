@@ -9,6 +9,8 @@ Le contexte partagé que les squads lisent et alimentent est dans un dépôt sé
 
 ## Par où commencer
 
+> **Pressé ?** La [fiche de démarrage](commun/fiche-demarrage.md) tient en une page.
+
 1. **[`commun/00-par-ou-commencer.md`](commun/00-par-ou-commencer.md)** : le pas à pas, d'avant le 23/10 jusqu'à la première heure de la session.
 2. La fiche de votre squad : `squads/<votre-squad>/KIT.md`.
 3. **[`commun/01-bases-en-5-minutes.md`](commun/01-bases-en-5-minutes.md)** : gates, Spec Kit en 7 commandes, Context Nexus en 4 registres, chapeaux.
@@ -18,6 +20,7 @@ Le contexte partagé que les squads lisent et alimentent est dans un dépôt sé
 
 ```
 commun/
+  fiche-demarrage.md                ← une page : avant le 23/10, le jour J en 4 étapes, 3 réflexes
   00-par-ou-commencer.md            ← le pas à pas : avant, à l'arrivée (12 h 30), la première heure
   01-bases-en-5-minutes.md          ← l'essentiel à lire avant la session
   02-spec-kit-x-context-nexus.md    ← quelle commande lancer, quel fichier lire, quel fichier publier
