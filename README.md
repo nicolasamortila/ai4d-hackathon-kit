@@ -16,6 +16,24 @@ Le contexte partagé que les squads lisent et alimentent est dans un dépôt sé
 3. **[`commun/01-bases-en-5-minutes.md`](commun/01-bases-en-5-minutes.md)** : gates, Spec Kit en 7 commandes, Context Nexus en 4 registres, chapeaux.
 4. Pendant la session : **[`commun/02-spec-kit-x-context-nexus.md`](commun/02-spec-kit-x-context-nexus.md)**, le mode opératoire phase par phase.
 
+## Installer les prérequis
+
+**Deux postes prêts par squad suffisent.** Profil non technique : un compte GitHub et un Codespace, rien à installer.
+
+Sur votre poste, en une ligne, sans droits administrateur (Git, Node.js 22, Claude Code, uv, Spec Kit, puis un bilan) :
+
+```powershell
+# Windows, dans PowerShell
+irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+```
+
+```bash
+# macOS, dans Terminal
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash
+```
+
+Détails : [`commun/03-prerequis-poste.md`](commun/03-prerequis-poste.md). Pour les starters en Codespaces : [`installation/devcontainer/`](installation/devcontainer/README.md).
+
 ## Contenu
 
 ```
@@ -24,7 +42,11 @@ commun/
   00-par-ou-commencer.md            ← le pas à pas : avant, à l'arrivée (12 h 30), la première heure
   01-bases-en-5-minutes.md          ← l'essentiel à lire avant la session
   02-spec-kit-x-context-nexus.md    ← quelle commande lancer, quel fichier lire, quel fichier publier
-  03-prerequis-poste.md             ← installation et vérification du poste
+  03-prerequis-poste.md             ← 2 postes par squad, Codespace ou installation en une ligne
+installation/
+  installer-prerequis.ps1           ← Windows, sans droits admin
+  installer-prerequis.sh            ← macOS, sans droits admin
+  devcontainer/                     ← .devcontainer/ des starters pour GitHub Codespaces
 squads/
   squad-1-offre/       KIT.md  CLAUDE.md
   squad-2-prix/        KIT.md  CLAUDE.md

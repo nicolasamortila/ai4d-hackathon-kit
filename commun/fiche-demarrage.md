@@ -5,15 +5,27 @@ Votre squad, votre chapeau et vos horaires de gate : `squads/<votre-squad>/KIT.m
 
 ## Avant le vendredi 23/10
 
-Installer Git, Node 20+, Claude Code et Spec Kit (`uv tool install specify-cli --from git+https://github.com/github/spec-kit.git`), puis vérifier :
+**Deux postes prêts par squad suffisent.** Profil non technique : un compte GitHub suffit, vous utiliserez un Codespace (rien à installer).
 
-```bash
-git --version && node --version && claude --version && specify check
+Pour installer sur votre poste, une ligne, sans droits administrateur :
+
+```powershell
+# Windows, dans PowerShell
+irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
 ```
 
-Un échec ? Prévenez le support **avant** le 23/10.
+```bash
+# macOS, dans Terminal
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash
+```
+
+Le bilan final doit être tout vert. Une ligne rouge : envoyez le bilan au support **avant** le 23/10.
 
 ## Le jour J, en 4 étapes
+
+**En Codespace** : ouvrez le dépôt du starter de votre squad → **Code → Codespaces → Create codespace**, collez la clé de la squad, puis passez directement à l'étape 3 (`claude`).
+
+**Sur votre poste** :
 
 ```bash
 # 1. Cloner le contexte partagé et le starter de votre squad (URL du starter affichée sur place)

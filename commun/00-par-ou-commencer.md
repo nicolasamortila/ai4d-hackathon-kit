@@ -5,17 +5,20 @@
 
 ## Avant · d'ici le vendredi 23/10 (10 minutes)
 
-1. Lire `01-bases-en-5-minutes.md`.
-2. Lire la fiche de votre squad : `squads/<votre-squad>/KIT.md` (mission, chapeau proposé, horaires de vos gates).
-3. Installer et vérifier le poste avec `03-prerequis-poste.md`. Le test qui compte :
-   ```bash
-   git --version && node --version && claude --version && specify check
-   ```
-4. Ça ne marche pas ? Écrivez au support **avant** le 23/10, pas le jour J.
+1. Lire `01-bases-en-5-minutes.md` et la fiche de votre squad : `squads/<votre-squad>/KIT.md`.
+2. Choisir votre façon d'être prêt (détails dans `03-prerequis-poste.md`) :
+   - **Profil non technique** : créez un compte GitHub et envoyez votre identifiant au support. Le jour J, vous ouvrirez un **Codespace** : rien à installer.
+   - **Installation sur votre poste** : une ligne à coller (PowerShell sous Windows, Terminal sous macOS), sans droits administrateur.
+     Le script se termine par un bilan, qui doit être tout vert.
+3. **Deux postes prêts par squad suffisent** (Orchestrator et Decision Guarantor). Les autres peuvent travailler en binôme.
+4. Une ligne rouge au bilan ? Envoyez-le au support **avant** le 23/10, pas le jour J.
 
 ## À l'arrivée · lundi 26/10, à partir de 12 h 30
 
 À votre table de squad, un seul poste suffit pour les étapes 1 à 4 ; les autres suivent sur leur propre poste.
+
+> **En Codespace** : ouvrez le dépôt du starter de votre squad, cliquez sur **Code → Codespaces → Create codespace on main**
+> et collez la clé de la squad quand GitHub la demande. Les étapes 1 à 4 se font toutes seules ; passez directement à l'étape 5.
 
 **1. Récupérer les deux dépôts, côte à côte**
 ```bash
