@@ -1,0 +1,165 @@
+# Squad 2 · Prix · Kit de démarrage
+
+> Hackathon Champions 4 h, dry run du **lundi 26 octobre 2026, 13 h 30 à 17 h 30** (installation dès 12 h 30).
+> À lire avec : `commun/00-par-ou-commencer.md` (le pas à pas), `commun/01-bases-en-5-minutes.md`, et pendant la session `commun/02-spec-kit-x-context-nexus.md`.
+
+## Démarrer en 5 étapes
+
+1. **Avant le 23/10** : poste vérifié (`git`, `node`, `claude`, `specify check`), cette fiche lue, votre chapeau repéré ci-dessous.
+2. **À 12 h 30** : cloner côte à côte `context-nexus` et `starter-squad-2-prix` dans `~/hackathon/`, brancher la clé agent de la squad.
+3. **Assembler votre contexte** :
+   ```bash
+   cd ~/hackathon/context-nexus
+   node tools/context-assemble.mjs --squad squad-2-prix --out ../starter-squad-2-prix/.context/brief.md
+   ```
+4. **Vérifier l'agent** : dans `starter-squad-2-prix`, lancer `claude` et demander « Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons ». Taper `/speckit` pour voir les commandes.
+5. **À 14h05, Discover** : le Context Engineer lit les contrats voisins, le Specification Engineer copie `gabarits/business-intent.md` dans `teams/squad-2-prix/intent/` et tient la plume.
+
+## Votre mission
+
+Construire la **règle de prix** : le plancher et le plafond du supplément selon l'occupation prévue, et définir les **KPI** de l'offre. Votre règle borne ce que vend Offre et ce que débite Paiement ; vos KPI se nourrissent des événements d'achat d'Expérience.
+
+**Ce que vous construisez pendant le dry run** : `GET /v1/pricing/late-checkout/bounds` dans le starter, et le calcul des KPI à partir d'un flux d'événements d'achat (mock tant qu'Expérience n'a pas publié).
+
+## Votre squad et vos chapeaux
+
+| Profil | Chapeau proposé |
+|---|---|
+| PO · Distrib API | Specification Engineer |
+| TL BFF · Stay | Decision Guarantor |
+| SA AEM · Offers | Agentic Workflow Orchestrator |
+| Sr Data Eng. · Revenue DATA | Context Engineer |
+
+Répartition proposée par l'animation ; vous l'ajustez au cadrage (0:00 à 0:30). En fin de session : l'effort estimé de votre chapeau était-il réaliste ?
+
+**Qui porte quoi à chaque gate** : le livrable est porté selon la matrice du TOM V1.0 ; le profil **TL BFF**, Decision Guarantor, signe chaque gate.
+
+| Gate | Livrable porté par |
+|---|---|
+| G1 | PO |
+| G2 | PO, TL BFF, SA AEM (co-owners) |
+| G3 | SA AEM (pas de profil dev : écart noté) |
+| G4 | Sr Data Eng. (pas de QA : écart noté ; KPI instrumentés au cœur de G4) |
+| G5 | Sr Data Eng. (bonus) |
+| G6 | PO (bonus) |
+
+## Votre agenda
+
+Squad 2 : décalage de **5 minutes** par rapport à la squad 1.
+
+| Horaire | Relatif | Bloc |
+|---|---|---|
+| 13h30 – 14h00 | 0:00 – 0:30 | Cadrage commun : accueil, règles, brief Vélora, volets, chapeaux |
+| 14h00 – 14h05 | 0:30 – 0:35 | Mise en route décalée : fin des vérifications, `context-assemble`, lecture du contexte |
+| 14h05 – 14h35 | 0:35 – 1:05 | **Discover** : lire le contexte des voisines, besoin à 5 champs, données, priorité |
+| 14h35 – 15h20 | 1:05 – 1:50 | **Design** : constitution → spec → plan → tâches → analyze, contrat v1 publié |
+| 15h20 – 15h30 | 1:50 – 2:00 | Pause |
+| 15h30 – 16h20 | 2:00 – 2:50 | **Develop** : `/speckit.implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
+| 16h20 – 16h45 | 2:50 – 3:15 | **Deploy** : déploiement, bascule de flag tracée, KPI et événements publiés |
+| 16h45 – 16h55 | 3:15 – 3:25 | **Bonus** (10 min) : Deepen (G5) et Drop (G6), version courte, si le temps le permet |
+| 16h55 – 17h30 | 3:25 – 4:00 | Débrief commun : préparation de la démo (10'), démos croisées (5'), rétro du TOM (10'), retour pour le 8 h (10') |
+
+| Gate | Créneau de 5 min | Gate keeper |
+|---|---|---|
+| G1 · Ready to Spec | **14h30** (1:00) | Produit |
+| G2 · Ready to Build | **15h15** (1:45) | Tech |
+| G3 · Ready to Release | **16h15** (2:45) | Tech |
+| G4 · Released and Observable | **16h40** (3:10) | Run |
+| G5, G6 · bonus | dans votre fenêtre de 10 min, de 16h45 à 16h55 | data (G5), produit (G6) |
+
+Règles de coupe : G2 pas passée 10 minutes après son créneau → le Develop devient guidé par le coach. G4 pas passée à 16h55 → la squad prépare sa démo.
+
+Avant chaque créneau : gate-check, puis `node tools/context-assemble.mjs --squad squad-2-prix --check`. Après chaque gate : fiche de retour (20 secondes).
+
+## Ce que vous publiez, ce que vous consommez
+
+Le Context Nexus est un dépôt partagé : vous lisez tout, vous n'écrivez que dans `teams/squad-2-prix/`.
+
+**Vous publiez** (v0 écrits par l'animation, v1 à publier avant G2) :
+
+| Fichier | Contenu | Lu par |
+|---|---|---|
+| `teams/squad-2-prix/contracts/regle-prix.md` | Règle de prix (bornes) | Offre, Paiement |
+| `teams/squad-2-prix/contracts/kpi.md` | Définition des KPI | Expérience, gate keeper data |
+
+**Vous consommez** (versions épinglées au départ) :
+
+| Fichier | Version épinglée | Squad | Pour |
+|---|---|---|---|
+| `teams/squad-4-experience/contracts/evenements-achat.md` | 0.1.0 | Expérience | Événements d'achat |
+| `teams/squad-1-offre/contracts/offre-api.md` | 0.1.0 | Offre | Éligibilité |
+
+Un écart entre votre contrat et celui d'une voisine se règle **en allant la voir**, pas en modifiant son fichier. Si vous n'y arrivez pas : gate keeper tech (Convergence Arbitrator).
+
+## À lire en premier (Discover)
+
+1. `.context/brief.md`, généré par `context-assemble` : tout ce qui suit y est assemblé.
+2. `programme/late-checkout/knowledge/brief.md` et `regles-metier.md` : le brief Vélora et les règles RM-01 à RM-08.
+3. Votre contrat v0 : `regle-prix.md`, `kpi.md`.
+4. Les contrats v0 que vous consommez (tableau ci-dessus), **en entier**.
+5. Vos données fictives (remises sur place).
+
+## Spec Kit, adapté à votre volet
+
+Point de départ pour `/speckit.specify` (à réécrire avec votre Business Intent Spec) :
+
+```
+/speckit.specify La règle de prix fixe le plancher et le plafond du supplément de late check-out selon l'occupation prévue de l'hôtel pour la nuit du départ, et les KPI de l'offre sont calculés à partir des événements d'achat et des réservations éligibles.
+Source : teams/squad-2-prix/intent/business-intent.md. Critères d'acceptance vérifiables par un test,
+chacun rattaché à une règle RM-xx ou à un contract (API-xx, SEC-xx, A11Y-xx, ENG-xx).
+```
+
+Questions utiles pour `/speckit.clarify` et pour vos échanges avec les voisines :
+
+- D'où vient la prévision d'occupation, de quand date-t-elle, et que fait la règle quand elle manque ?
+- Avec quels paramètres Offre et Paiement appellent-ils votre règle, et que leur renvoyez-vous quand aucun LCO n'est vendable ?
+- Quels seuils de KPI viennent d'une décision humaine (Intent) et lesquels sont de simples suivis ?
+- Si la Direction Revenu Annexe change la règle, qui prévenez-vous et comment ?
+
+## Les gates de votre squad
+
+| Gate | Livrable | Où dans le Nexus | Vérifié par gate-check | Jugé par le gate keeper |
+|---|---|---|---|---|
+| **G1** 14h30 | Business Intent Spec | `teams/squad-2-prix/intent/business-intent.md` | 5 champs complets, contexte daté et sourcé | Critère de succès chiffré, données, priorité avec owner |
+| **G2** 15h15 | Solution Design Spec | spec publiée dans `intent/specs/` + contrat v1 dans `contracts/` | Critères évaluables, versions épinglées, contrat d'API valide face aux voisines | NFR chiffrés, DoR, spec « active » avec owner |
+| **G3** 16h15 | Code et Test Specs | code et tests dans le starter, spec `active` (pas `stale`) | Lint, tests, couverture, sécurité, spec mise à jour | Revue nommée, criticité, signature humaine en PCI, plan de flags |
+| **G4** 16h40 | Runtime Specs | `operations/runbook.md` + `operations/flags-journal.md` | Flag tracé, observabilité, KPI instrumentés, coût en tokens | Owner d'exploitation, runbook, rollback |
+| **G5** bonus | Opportunity Spec | `intent/opportunity.md` | Résultats lus sur 30 jours, coût IA compris | Verdict parmi trois, face à la promesse du G1 |
+| **G6** bonus | Retirement Spec | `intent/retirement.md` | Carte des dépendances, chaque ligne avec sa disposition | Utilisateurs impactés, porteur de la communication, decision record |
+
+Un no-go renvoie vers l'étape gardée et nomme le critère qui manque. G5 et G6 : en bonus, version courte, sur matériel fourni.
+
+## Points d'attention pour votre squad
+
+- Votre contrat est consommé par deux squads : toute modification cassante = version majeure, et vous allez les prévenir.
+- Les seuils des KPI sont de l'Intent : ils se décident en G1, pas pendant l'implémentation.
+
+## Commandes de survie
+
+```bash
+# Assembler le contexte de la squad (début de chaque bloc, et après toute publication annoncée)
+cd ~/hackathon/context-nexus && git pull
+node tools/context-assemble.mjs --squad squad-2-prix --out ../starter-squad-2-prix/.context/brief.md
+
+# Vérifier avant une gate (code retour 1 = quelque chose est stale)
+node tools/context-assemble.mjs --squad squad-2-prix --check
+
+# Quand un contrat a changé : marquer ses artefacts stale, puis lire le changement
+node tools/context-assemble.mjs --squad squad-2-prix --mark-stale
+git log -p -3 -- teams/
+
+# Publier
+git add teams/squad-2-prix && git commit -m "squad-2-prix: publie <artefact> v<version>" && git pull --rebase && git push
+```
+
+## Vos interlocuteurs
+
+| Pour | Qui |
+|---|---|
+| Votre coach, présent à chacune de vos gates | présenté au cadrage |
+| Rythme et règles de coupe | l'animateur principal |
+| Agent, Spec Kit, CI, clés, dépôt partagé | le support technique Zenika |
+| Conflit de contrat entre squads | gate keeper tech |
+| Tokens et coût IA | les greffiers |
+
+Bloqué plus de 5 minutes sur l'outillage : levez la main.
