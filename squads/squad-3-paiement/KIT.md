@@ -6,7 +6,7 @@
 ## Démarrer en 5 étapes
 
 1. **Avant le 23/10** : cette fiche lue, votre chapeau repéré ci-dessous, et votre façon d'être prêt choisie (`commun/03-prerequis-poste.md`) : **Codespace** (un compte GitHub, rien à installer) ou **installation en une ligne** sur votre poste. Deux postes prêts par squad suffisent.
-2. **À 12 h 30** : en Codespace, ouvrir `starter-squad-3-paiement` → **Code → Codespaces → Create codespace** et coller la clé de la squad (le clonage et l'étape 3 se font tout seuls). Sur votre poste : cloner côte à côte `context-nexus` et `starter-squad-3-paiement` dans `~/hackathon/`, brancher la clé agent de la squad.
+2. **À 12 h 30** : en Codespace, ouvrir `starter-squad-3-paiement` → **Code → Codespaces → … → New with options…**, coller la clé de la squad dans `ANTHROPIC_API_KEY`, puis **Create codespace** (pas à pas : `commun/fiche-demarrage.md`, voie A) (le clonage et l'étape 3 se font tout seuls). Sur votre poste : cloner côte à côte `context-nexus` et `starter-squad-3-paiement` dans `~/hackathon/`, brancher la clé agent de la squad.
 3. **Assembler votre contexte** :
    ```bash
    cd ~/hackathon/context-nexus

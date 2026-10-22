@@ -17,8 +17,9 @@
 
 À votre table de squad, un seul poste suffit pour les étapes 1 à 4 ; les autres suivent sur leur propre poste.
 
-> **En Codespace** : ouvrez le dépôt du starter de votre squad, cliquez sur **Code → Codespaces → Create codespace on main**
-> et collez la clé de la squad quand GitHub la demande. Les étapes 1 à 4 se font toutes seules ; passez directement à l'étape 5.
+> **En Codespace** : ouvrez le dépôt de votre squad, cliquez sur **Code → Codespaces → … → New with options…**,
+> collez la clé de la squad dans `ANTHROPIC_API_KEY` puis **Create codespace**. Les étapes 1 à 4 se font toutes seules ;
+> passez directement à l'étape 5. Pas à pas détaillé : `fiche-demarrage.md`, voie A.
 
 **1. Récupérer les deux dépôts, côte à côte**
 ```bash

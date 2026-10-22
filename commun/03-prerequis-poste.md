@@ -16,8 +16,10 @@ travailler sur le poste d'un ou une collègue. Installer sur votre poste reste u
 Il faut seulement un navigateur et un compte GitHub.
 
 1. Créez un compte sur [github.com](https://github.com) si vous n'en avez pas, et envoyez votre identifiant au support.
-2. Le jour J, ouvrez le dépôt du starter de votre squad, puis cliquez sur **Code → Codespaces → Create codespace on main**.
-3. Collez la clé agent de la squad quand GitHub la demande, puis attendez 2 à 4 minutes.
+2. Le jour J, ouvrez le dépôt de votre squad, puis cliquez sur **Code → Codespaces → … → New with options…**.
+3. Collez la clé agent de la squad dans le champ `ANTHROPIC_API_KEY`, cliquez sur **Create codespace**, puis attendez 2 à 4 minutes.
+
+Le pas à pas illustré est dans la **fiche de démarrage** (`fiche-demarrage.md`, voie A).
 
 Vous obtenez VS Code dans le navigateur, avec tout déjà installé et le contexte de votre squad prêt.
 
