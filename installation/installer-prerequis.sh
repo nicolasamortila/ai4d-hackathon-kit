@@ -11,6 +11,7 @@ set -uo pipefail
 
 SPEC_KIT_REF="${SPEC_KIT_REF:-main}"
 NODE_MAJOR=22
+SPEC_KIT_PYTHON=3.13   # version récente sans paquets précompilés pour toutes les dépendances = compilation
 NODE_DIR="$HOME/.local/share/nodejs"
 BIN_DIR="$HOME/.local/bin"
 CHECK_ONLY=0
@@ -84,7 +85,7 @@ installer_uv() {
 installer_speckit() {
   etape "Spec Kit (specify, version $SPEC_KIT_REF)"
   command -v uv >/dev/null 2>&1 || { rouge "uv manquant, Spec Kit ne peut pas être installé"; return 1; }
-  uv tool install --force --quiet specify-cli --from "git+https://github.com/github/spec-kit.git@$SPEC_KIT_REF" \
+  uv tool install --force --quiet --python "$SPEC_KIT_PYTHON" specify-cli --from "git+https://github.com/github/spec-kit.git@$SPEC_KIT_REF" \
     && vert "installé"
 }
 

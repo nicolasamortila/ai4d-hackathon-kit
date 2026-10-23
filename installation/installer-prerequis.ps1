@@ -13,6 +13,7 @@ $ProgressPreference = 'SilentlyContinue'
 
 $SpecKitRef = if ($env:SPEC_KIT_REF) { $env:SPEC_KIT_REF } else { 'main' }
 $NodeMajor  = 22
+$SpecKitPython = '3.13'
 $Programs   = Join-Path $env:LOCALAPPDATA 'Programs'
 $NodeDir    = Join-Path $Programs 'nodejs'
 $GitDir     = Join-Path $Programs 'PortableGit'
@@ -128,7 +129,11 @@ function Install-Uv {
 function Install-SpecKit {
   Etape "Spec Kit (specify, version $SpecKitRef)"
   if (-not (Test-Cmd uv)) { Ko 'uv manquant, Spec Kit ne peut pas etre installe'; return }
-  uv tool install --force --quiet specify-cli --from "git+https://github.com/github/spec-kit.git@$SpecKitRef"
+  # Python 3.13 imposé : sur une version plus récente, certaines dépendances (pyyaml) n'ont pas de paquet
+  # Windows précompilé et uv tente de les compiler, ce qui exige Visual C++.
+  uv tool install --force --quiet --python $SpecKitPython specify-cli --from "git+https://github.com/github/spec-kit.git@$SpecKitRef"
+  if ($LASTEXITCODE -ne 0) { throw "uv tool install a echoue (code $LASTEXITCODE)" }
+  Update-SessionPath
   Ok 'installe'
 }
 

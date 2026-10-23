@@ -10,7 +10,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 echo "▸ uv et Spec Kit (${SPEC_KIT_REF:-main})"
 command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | env UV_NO_MODIFY_PATH=1 sh
-uv tool install --force --quiet specify-cli --from "git+https://github.com/github/spec-kit.git@${SPEC_KIT_REF:-main}"
+uv tool install --force --quiet --python 3.13 specify-cli --from "git+https://github.com/github/spec-kit.git@${SPEC_KIT_REF:-main}"
 
 echo "▸ Claude Code"
 command -v claude >/dev/null || curl -fsSL https://claude.ai/install.sh | bash
