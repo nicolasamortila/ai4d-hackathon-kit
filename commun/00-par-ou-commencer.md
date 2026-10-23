@@ -17,7 +17,7 @@
 
 À votre table de squad, un seul poste suffit pour les étapes 1 à 4 ; les autres suivent sur leur propre poste.
 
-> **En Codespace** : ouvrez le dépôt de votre squad, cliquez sur **Code → Codespaces → Create codespace on main**,
+> **En Codespace** : cliquez sur le **lien Codespace de votre squad** (fiche de démarrage, voie A),
 > puis connectez-vous avec `claude auth login`. Les étapes 1 à 4 se font toutes seules ;
 > passez directement à l'étape 5. Pas à pas détaillé : `fiche-demarrage.md`, voie A.
 
