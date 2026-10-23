@@ -32,6 +32,8 @@ Toutes les commandes et tous les liens de cette fiche sont **déjà remplis pour
 Un Codespace est un ordinateur prêt à l'emploi qui s'ouvre **dans votre navigateur**. Tout y est installé :
 l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad et le contexte partagé.
 
+> **Prérequis** : le Codespace ne s'ouvre que si vous êtes **connecté à votre compte GitHub** dans ce navigateur. Connectez-vous d'abord sur [github.com](https://github.com), puis revenez ici.
+
 1. **Connectez-vous à [github.com](https://github.com)**, puis **cliquez sur le lien de votre squad** :
 
    | Votre squad | Cliquez ici pour ouvrir votre Codespace |
