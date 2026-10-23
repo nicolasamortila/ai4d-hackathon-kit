@@ -18,7 +18,24 @@ Le contexte partagé que les squads lisent et alimentent est dans un dépôt sé
 
 ## Installer les prérequis
 
-**Deux postes prêts par squad suffisent.** Profil non technique : un compte GitHub et un Codespace, rien à installer.
+**Deux postes prêts par squad suffisent.** Deux options, détaillées dans la [fiche de démarrage](commun/fiche-demarrage.md#2-choisissez-votre-voie).
+
+### Option A · GitHub Codespaces (recommandée, rien à installer)
+
+Pour les profils non techniques : un navigateur et un compte GitHub suffisent. Connectez-vous à GitHub, puis cliquez sur le lien de votre squad.
+Le Codespace s'ouvre dans le navigateur avec tout installé : VS Code, Claude Code, Spec Kit, le dépôt de la squad et le dossier `context-nexus` à la racine du projet.
+
+| Squad | Ouvrir le Codespace |
+|---|---|
+| **1 · Offre** | [starter-squad-1-offre](https://codespaces.new/zenika-dev/starter-squad-1-offre) |
+| **2 · Prix** | [starter-squad-2-prix](https://codespaces.new/zenika-dev/starter-squad-2-prix) |
+| **3 · Paiement** | [starter-squad-3-paiement](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
+| **4 · Expérience** | [starter-squad-4-experience](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
+
+Comptez environ 10 minutes, jusqu'au message « ✓ Codespace prêt » dans le terminal, puis connectez Claude avec `claude auth login`.
+Le pas à pas (fenêtres de permissions et de confiance du dossier) est dans la [fiche de démarrage, voie A](commun/fiche-demarrage.md#voie-a).
+
+### Option B · installation sur votre poste
 
 Sur votre poste, en une ligne, sans droits administrateur. Avec le nom de votre squad, le script installe Git, Node.js 22,
 Claude Code, uv et Spec Kit, clone le contexte partagé et le dépôt de la squad dans `hackathon/`, assemble le contexte, puis affiche un bilan :
@@ -35,13 +52,13 @@ curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/
 
 Remplacez `squad-2-prix` par votre squad. Sans nom de squad, seuls les outils sont installés.
 
-Détails : [`commun/03-prerequis-poste.md`](commun/03-prerequis-poste.md). Pour les starters en Codespaces : [`installation/devcontainer/`](installation/devcontainer/).
+Détails : [`commun/03-prerequis-poste.md`](commun/03-prerequis-poste.md). Le modèle de `.devcontainer/` des starters Codespaces est dans [`installation/devcontainer/`](installation/devcontainer/).
 
 ## Contenu
 
 ```
 commun/
-  fiche-demarrage.md                ← une page : avant le 23/10, le jour J en 4 étapes, 3 réflexes
+  fiche-demarrage.md                ← liens et commandes de votre squad : voie A (Codespace) ou voie B (votre poste)
   00-par-ou-commencer.md            ← le pas à pas : avant, à l'arrivée (12 h 30), la première heure
   01-bases-en-5-minutes.md          ← l'essentiel à lire avant la session
   02-spec-kit-x-context-nexus.md    ← quelle commande lancer, quel fichier lire, quel fichier publier
