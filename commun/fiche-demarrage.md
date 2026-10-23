@@ -41,10 +41,10 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
 
 | Votre squad | Cliquez ici pour ouvrir votre Codespace |
 |---|---|
-| **1 · Offre** | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre) |
-| **2 · Prix** | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix) |
-| **3 · Paiement** | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
-| **4 · Expérience** | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
+| **1 · Offre** | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre/tree/devcontainer/squad-1-offre) |
+| **2 · Prix** | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix/tree/devcontainer/squad-2-prix) |
+| **3 · Paiement** | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement/tree/devcontainer/squad-3-paiement) |
+| **4 · Expérience** | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience/tree/devcontainer/squad-4-experience) |
 
 Vous ne savez pas dans quelle squad vous êtes ? Regardez le tableau de la section 1, ou demandez au support.
 
@@ -111,7 +111,7 @@ Poste pilote : **SA iOS** (Orchestrator) · Context Engineer : **Data analyst** 
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-1-offre](https://codespaces.new/zenika-dev/starter-squad-1-offre) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre/tree/devcontainer/squad-1-offre) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-1-offre/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-1-offre/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-1-offre](https://github.com/zenika-dev/starter-squad-1-offre) |
 | Notre dossier dans le contexte partagé | [teams/squad-1-offre](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-1-offre) |
@@ -170,7 +170,7 @@ Poste pilote : **SA AEM** (Orchestrator) · Context Engineer : **Sr Data Eng.** 
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-2-prix](https://codespaces.new/zenika-dev/starter-squad-2-prix) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix/tree/devcontainer/squad-2-prix) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-2-prix/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-2-prix/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-2-prix](https://github.com/zenika-dev/starter-squad-2-prix) |
 | Notre dossier dans le contexte partagé | [teams/squad-2-prix](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-2-prix) |
@@ -229,7 +229,7 @@ Poste pilote : **SA Android** (Orchestrator) · Context Engineer : **Scrum Maste
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-3-paiement](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement/tree/devcontainer/squad-3-paiement) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-3-paiement/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-3-paiement/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-3-paiement](https://github.com/zenika-dev/starter-squad-3-paiement) |
 | Notre dossier dans le contexte partagé | [teams/squad-3-paiement](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-3-paiement) |
@@ -288,7 +288,7 @@ Poste pilote : **Dev Android** (Orchestrator) · Context Engineer : **SA Web JS*
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-4-experience](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience/tree/devcontainer/squad-4-experience) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-4-experience/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-4-experience/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-4-experience](https://github.com/zenika-dev/starter-squad-4-experience) |
 | Notre dossier dans le contexte partagé | [teams/squad-4-experience](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-4-experience) |
