@@ -24,12 +24,11 @@ RC
 
 echo "▸ Context Nexus"
 [ -d "$NEXUS_DIR/.git" ] || git clone --quiet "$NEXUS_URL" "$NEXUS_DIR"
-# Lien visible dans l'explorateur, à la racine du projet (les chemins ../context-nexus restent valables).
-# Exclu via .git/info/exclude : rien à committer dans le starter.
-if [ ! -e "$STARTER_DIR/context-nexus" ]; then
-  ln -s "$NEXUS_DIR" "$STARTER_DIR/context-nexus"
-  grep -qx '/context-nexus' "$STARTER_DIR/.git/info/exclude" 2>/dev/null || echo '/context-nexus' >> "$STARTER_DIR/.git/info/exclude"
-fi
+# Espace de travail à deux dossiers (starter + context-nexus), ouvert ensuite par open-workspace.sh.
+# Écrit à côté des dépôts, hors du starter : rien à committer.
+cat > "$(dirname "$STARTER_DIR")/hackathon.code-workspace" <<WS
+{ "folders": [ { "path": "$(basename "$STARTER_DIR")" }, { "path": "context-nexus" } ] }
+WS
 
 # La squad se déduit du nom du dépôt starter (starter-squad-1-offre → squad-1-offre), ou de $SQUAD.
 SQUAD="${SQUAD:-$(basename "$STARTER_DIR" | sed 's/^starter-//')}"
