@@ -32,7 +32,17 @@ Toutes les commandes et tous les liens de cette fiche sont **déjà remplis pour
 Un Codespace est un ordinateur prêt à l'emploi qui s'ouvre **dans votre navigateur**. Tout y est installé :
 l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad et le contexte partagé.
 
-1. Connectez-vous à GitHub, puis cliquez sur le lien **« Ouvrir mon Codespace »** de **votre section**.
+1. **Connectez-vous à [github.com](https://github.com)**, puis **cliquez sur le lien de votre squad** :
+
+   | Votre squad | Cliquez ici pour ouvrir votre Codespace |
+   |---|---|
+   | **1 · Offre** | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre) |
+   | **2 · Prix** | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix) |
+   | **3 · Paiement** | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
+   | **4 · Expérience** | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
+
+   Vous ne savez pas dans quelle squad vous êtes ? Regardez le tableau de la section 1, ou demandez au support.
+
 2. La page « Create codespace » s'affiche, avec un cadre de trois réglages : **Branch** (`main`), **Region** et **Machine type**. **Ne changez rien.**
    Aucune clé n'est demandée : vous vous connecterez avec votre compte Claude à l'étape 4.
    Cliquez sur le bouton vert **Create codespace**, en bas à droite du cadre.
@@ -46,7 +56,7 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
    S'il cite votre volet et les contrats des autres squads, vous êtes prêt.
 
 **Bon à savoir**
-- Onglet fermé ? Votre Codespace vous attend sur [github.com/codespaces](https://github.com/codespaces). Ne recliquez **pas** sur « Ouvrir mon Codespace » : cela en créerait un deuxième, sans votre travail non publié.
+- Onglet fermé ? Votre Codespace vous attend sur [github.com/codespaces](https://github.com/codespaces). Ne recliquez **pas** sur le lien de votre squad : cela en créerait un deuxième, sans votre travail non publié.
 - Après 30 minutes sans activité, il se met en veille ; rouvrez-le, il redémarre en quelques secondes, toujours connecté.
 - Le Codespace est **personnel** (connecté à votre compte Claude) : ne le partagez pas.
 
