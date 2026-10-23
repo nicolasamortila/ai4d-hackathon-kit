@@ -4,6 +4,9 @@
 #   Dans PowerShell (pas besoin de l'ouvrir en administrateur) :
 #   irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
 #
+# Avec le nom de la squad, le script clone aussi les dépôts dans %USERPROFILE%\hackathon et assemble le contexte :
+#   $env:SQUAD = "squad-2-prix"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+#
 # Vérification seule :  $env:VERIFIER_SEULEMENT = "1"; puis la même commande
 # Version de Spec Kit : $env:SPEC_KIT_REF = "<tag>"; puis la même commande (défaut : main)
 
@@ -19,6 +22,10 @@ $NodeDir    = Join-Path $Programs 'nodejs'
 $GitDir     = Join-Path $Programs 'PortableGit'
 $LocalBin   = Join-Path $env:USERPROFILE '.local\bin'
 $CheckOnly  = $env:VERIFIER_SEULEMENT -eq '1'
+$Squads     = 'squad-1-offre', 'squad-2-prix', 'squad-3-paiement', 'squad-4-experience'
+$Squad      = if ($args.Count -gt 0) { [string]$args[0] } elseif ($env:SQUAD) { $env:SQUAD } else { '' }
+$WorkDir    = Join-Path $env:USERPROFILE 'hackathon'
+$GitHubBase = if ($env:GITHUB_BASE) { $env:GITHUB_BASE } else { 'https://github.com/zenika-dev' }   # surchargeable pour les tests
 
 function Etape($t) { Write-Host "`n> $t" -ForegroundColor White }
 function Ok($t)    { Write-Host $t -ForegroundColor Green }
@@ -137,6 +144,50 @@ function Install-SpecKit {
   Ok 'installe'
 }
 
+# Clone le dépôt s'il manque, sinon le met à jour. Renvoie $false si le dépôt n'est pas accessible.
+function Sync-Repo($url, $dir) {
+  # 'Continue' : sous PowerShell 5.1, la sortie d'erreur de git redirigée deviendrait sinon une erreur bloquante.
+  $ErrorActionPreference = 'Continue'
+  if (Test-Path (Join-Path $dir '.git')) {
+    git -C $dir pull --quiet --ff-only
+    if ($LASTEXITCODE -eq 0) { Ok "a jour : $dir" } else { Ko "mise a jour impossible : $dir (modifications locales ?)" }
+    return $true
+  }
+  git clone --quiet $url $dir 2>&1 | Out-Null
+  if ($LASTEXITCODE -eq 0) { Ok "clone : $dir"; return $true }
+  if (Test-Path $dir) { Remove-Item $dir -Recurse -Force }
+  return $false
+}
+
+function Initialize-Squad {
+  $ErrorActionPreference = 'Continue'
+  Etape "Depots de $Squad dans $WorkDir"
+  New-Item -ItemType Directory -Force -Path $WorkDir | Out-Null
+  $nexus = Join-Path $WorkDir 'context-nexus'
+  $starter = Join-Path $WorkDir "starter-$Squad"
+  if (-not (Sync-Repo "$GitHubBase/ai4d-hackathon-context-nexus.git" $nexus)) { Ko "impossible de cloner le contexte partage"; return }
+  if (-not (Sync-Repo "$GitHubBase/starter-$Squad.git" $starter)) {
+    Ko "le depot starter-$Squad n'est pas encore disponible : relancez la meme commande le jour J"
+    $starter = $null
+  }
+  Etape "Contexte de $Squad"
+  $assemble = Join-Path $nexus 'tools/context-assemble.mjs'
+  if ($starter) {
+    node $assemble --squad $Squad --out (Join-Path $starter '.context/brief.md') | Select-Object -Last 2
+    if (Test-Path (Join-Path $starter 'package.json')) {
+      if (-not (Test-Cmd npm)) { Ko 'npm introuvable : dependances non installees' }
+      else {
+        Push-Location $starter
+        npm install --silent 2>&1 | Out-Null
+        if ($LASTEXITCODE -eq 0) { Ok 'dependances npm installees' } else { Ko "npm install a echoue dans $starter" }
+        Pop-Location
+      }
+    }
+  } else {
+    node $assemble --squad $Squad | Select-Object -Last 2
+  }
+}
+
 function Show-Bilan {
   Etape 'Bilan'
   $ko = $false
@@ -147,9 +198,22 @@ function Show-Bilan {
     Ok ("v {0,-8} {1}" -f $t, $v)
   }
   if ($env:CLAUDE_CODE_GIT_BASH_PATH) { Ok "v git bash $env:CLAUDE_CODE_GIT_BASH_PATH" }
+  $starterDir = Join-Path $WorkDir "starter-$Squad"
+  if ($Squad) {
+    if (Test-Path (Join-Path $WorkDir 'context-nexus/.git')) { Ok "v contexte $(Join-Path $WorkDir 'context-nexus')" } else { Ko 'x contexte non clone'; $ko = $true }
+    if (Test-Path (Join-Path $starterDir '.git')) { Ok "v starter  $starterDir" } else { Ko 'x starter  pas encore disponible (a relancer le jour J)' }
+  }
   Write-Host ''
   if ($ko) { Ko 'Il manque quelque chose. Copiez ce bilan et envoyez-le au support du hackathon.' }
-  else     { Ok 'Tout est pret. Fermez PowerShell, ouvrez-en un NOUVEAU, puis suivez la fiche de demarrage.' }
+  else {
+    Ok 'Tout est pret. Fermez PowerShell, ouvrez-en un NOUVEAU, puis suivez la fiche de demarrage.'
+    if ($Squad -and (Test-Path (Join-Path $starterDir '.git'))) { Write-Host "  cd $starterDir ; claude auth login ; claude" }
+  }
+}
+
+if ($Squad -and ($Squads -notcontains $Squad)) {
+  Ko "Squad inconnue : '$Squad'. Choisissez parmi : $($Squads -join ', ')"
+  return
 }
 
 New-Item -ItemType Directory -Force -Path $Programs, $LocalBin | Out-Null
@@ -164,6 +228,11 @@ if (-not $CheckOnly) {
   )
   foreach ($s in $steps) {
     try { & $s.Run } catch { Ko "echec de l'installation de $($s.Name) : $($_.Exception.Message)" }
+  }
+  if ($Squad) {
+    if ((Test-Cmd git) -and (Test-Node)) {
+      try { Initialize-Squad } catch { Ko "echec de la preparation de la squad : $($_.Exception.Message)" }
+    } else { Ko 'Git ou Node manquant : depots non clones' }
   }
 }
 Show-Bilan

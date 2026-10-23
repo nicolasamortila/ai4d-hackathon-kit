@@ -23,7 +23,7 @@ Kit complet : [github.com/zenika-dev/ai4d-hackathon-kit](https://github.com/zeni
 |---|---|---|
 | Pour qui | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal |
 | Il faut | Un navigateur, un compte GitHub et votre compte Claude | Lancer un script d'installation avant le 23/10, et votre compte Claude |
-| Le jour J | 3 clics, tout est prêt en 3 minutes | 3 commandes |
+| Le jour J | 3 clics, tout est prêt en 3 minutes | La même ligne relancée, puis `claude` |
 
 ---
 
@@ -92,39 +92,43 @@ Il lit les fichiers, propose des modifications et vous demande votre accord avan
 
 ## Voie B · votre poste
 
-### Avant le 23/10
-
-Une ligne à coller, sans droits administrateur. Elle installe Git, Node.js, Claude Code et Spec Kit, puis affiche un bilan.
+Une ligne à coller, sans droits administrateur, **avec le nom de votre squad** (voir « Vos liens »). Elle installe Git, Node.js,
+Claude Code et Spec Kit, clone le contexte partagé et le dépôt de votre squad dans le dossier `hackathon` de votre profil,
+assemble le contexte de la squad, puis affiche un bilan.
 
 ```powershell
-# Windows : dans PowerShell (menu Démarrer, tapez « PowerShell »)
-irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+# Windows : dans PowerShell (menu Démarrer, tapez « PowerShell »), en remplaçant squad-2-prix par votre squad
+$env:SQUAD = "squad-2-prix"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
 ```
 
 ```bash
-# macOS : dans Terminal (Cmd + Espace, tapez « Terminal »)
-curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash
+# macOS : dans Terminal (Cmd + Espace, tapez « Terminal »), en remplaçant squad-2-prix par votre squad
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-2-prix
 ```
 
-Le bilan doit être tout vert. Une ligne rouge : envoyez le bilan au support **avant** le 23/10.
+**Avant le 23/10** : lancez-la une première fois. Le bilan doit être vert, sauf la ligne « starter » : le dépôt de votre squad
+n'est ouvert que le jour J. Une autre ligne rouge : envoyez le bilan au support **avant** le 23/10.
 
-### Le jour J, à 12 h 30
+**Le jour J, à 12 h 30** : relancez **la même ligne**. Elle récupère le dépôt de votre squad et met tout à jour. Puis :
 
 ```bash
-# 1. Cloner le contexte partagé et le dépôt de votre squad, côte à côte
+cd ~/hackathon/starter-<squad>
+claude auth login      # connexion avec votre compte Claude (abonnement), une seule fois
+claude
+```
+
+Vérifiez avec la même question qu'en voie A (étape 6), et tapez `/speckit` : les commandes doivent apparaître.
+
+<details><summary>Sans le script : les commandes à la main</summary>
+
+```bash
 mkdir -p ~/hackathon && cd ~/hackathon
 git clone https://github.com/zenika-dev/ai4d-hackathon-context-nexus.git context-nexus
 git clone https://github.com/zenika-dev/starter-<squad>.git starter-<squad>
-
-# 2. Assembler le contexte de votre squad
 cd context-nexus && node tools/context-assemble.mjs --squad <squad> --out ../starter-<squad>/.context/brief.md
-
-# 3. Lancer l'agent
-cd ../starter-<squad> && claude
+cd ../starter-<squad> && npm install
 ```
-
-Au premier lancement, Claude Code propose de se connecter : choisissez le **compte Claude avec abonnement**, puis connectez-vous dans le navigateur qui s'ouvre.
-Puis vérifiez avec la même question qu'en voie A (étape 6), et tapez `/speckit` : les commandes doivent apparaître.
+</details>
 
 `<squad>` : `squad-1-offre`, `squad-2-prix`, `squad-3-paiement` ou `squad-4-experience`.
 

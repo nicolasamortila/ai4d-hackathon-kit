@@ -30,21 +30,25 @@ Aucun droit administrateur n'est nécessaire : tout s'installe dans votre profil
 **Windows** : ouvrez **PowerShell** (menu Démarrer, tapez « PowerShell », pas besoin du mode administrateur), collez :
 
 ```powershell
-irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+$env:SQUAD = "squad-2-prix"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
 ```
 
 **macOS** : ouvrez **Terminal** (Cmd + Espace, tapez « Terminal »), collez :
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-2-prix
 ```
+
+Remplacez `squad-2-prix` par votre squad (`squad-1-offre`, `squad-2-prix`, `squad-3-paiement`, `squad-4-experience`).
+Avec ce nom, le script clone aussi le contexte partagé et le dépôt de votre squad dans `hackathon/`, et assemble le contexte.
+Sans nom, il installe seulement les outils. Le jour J, relancez la même ligne : elle récupère le dépôt de votre squad.
 
 Le script installe ce qui manque parmi Git, Node.js 22, Claude Code, uv et Spec Kit, puis affiche un bilan.
 - Tout est vert : fermez la fenêtre, ouvrez-en une nouvelle. Vous êtes prêt.
 - Une ligne est rouge : copiez le bilan et envoyez-le au support.
 - macOS : si une fenêtre propose d'installer les « outils de ligne de commande », acceptez, attendez la fin, puis relancez la commande.
 
-Pour seulement vérifier, sans rien installer : ajoutez `-s -- --verifier` après `bash` (macOS), ou lancez
+Pour seulement vérifier, sans rien installer : ajoutez `--verifier` après le nom de la squad (macOS), ou lancez
 `$env:VERIFIER_SEULEMENT = "1"` avant la commande (Windows).
 
 ## Accès à Claude

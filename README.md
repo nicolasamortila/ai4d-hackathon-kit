@@ -20,17 +20,20 @@ Le contexte partagé que les squads lisent et alimentent est dans un dépôt sé
 
 **Deux postes prêts par squad suffisent.** Profil non technique : un compte GitHub et un Codespace, rien à installer.
 
-Sur votre poste, en une ligne, sans droits administrateur (Git, Node.js 22, Claude Code, uv, Spec Kit, puis un bilan) :
+Sur votre poste, en une ligne, sans droits administrateur. Avec le nom de votre squad, le script installe Git, Node.js 22,
+Claude Code, uv et Spec Kit, clone le contexte partagé et le dépôt de la squad dans `hackathon/`, assemble le contexte, puis affiche un bilan :
 
 ```powershell
 # Windows, dans PowerShell
-irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+$env:SQUAD = "squad-2-prix"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
 ```
 
 ```bash
 # macOS, dans Terminal
-curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-2-prix
 ```
+
+Remplacez `squad-2-prix` par votre squad. Sans nom de squad, seuls les outils sont installés.
 
 Détails : [`commun/03-prerequis-poste.md`](commun/03-prerequis-poste.md). Pour les starters en Codespaces : [`installation/devcontainer/`](installation/devcontainer/README.md).
 

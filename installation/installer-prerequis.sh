@@ -4,7 +4,11 @@
 #
 #   curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash
 #
-# Options : --verifier (n'installe rien, affiche seulement le bilan)
+# Avec le nom de la squad, le script clone aussi les dépôts dans ~/hackathon et assemble le contexte :
+#   curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-2-prix
+#
+# Arguments : <squad> (squad-1-offre, squad-2-prix, squad-3-paiement, squad-4-experience)
+#             --verifier (n'installe rien, affiche seulement le bilan)
 # Variable : SPEC_KIT_REF=<tag> pour installer une version précise de Spec Kit (défaut : main)
 
 set -uo pipefail
@@ -15,7 +19,17 @@ SPEC_KIT_PYTHON=3.13   # version récente sans paquets précompilés pour toutes
 NODE_DIR="$HOME/.local/share/nodejs"
 BIN_DIR="$HOME/.local/bin"
 CHECK_ONLY=0
-[ "${1:-}" = "--verifier" ] && CHECK_ONLY=1
+SQUAD=""
+SQUADS="squad-1-offre squad-2-prix squad-3-paiement squad-4-experience"
+WORK_DIR="$HOME/hackathon"
+GITHUB_BASE="${GITHUB_BASE:-https://github.com/zenika-dev}"   # surchargeable pour les tests
+NEXUS_URL="$GITHUB_BASE/ai4d-hackathon-context-nexus.git"
+for arg in "$@"; do
+  case "$arg" in
+    --verifier) CHECK_ONLY=1 ;;
+    *) SQUAD="$arg" ;;
+  esac
+done
 
 vert()  { printf '\033[32m%s\033[0m\n' "$*"; }
 rouge() { printf '\033[31m%s\033[0m\n' "$*"; }
@@ -89,6 +103,38 @@ installer_speckit() {
     && vert "installé"
 }
 
+# Clone le dépôt s'il manque, sinon le met à jour. Renvoie 1 si le dépôt n'est pas accessible.
+cloner_ou_mettre_a_jour() {
+  local url="$1" dir="$2"
+  if [ -d "$dir/.git" ]; then
+    git -C "$dir" pull --quiet --ff-only && vert "à jour : $dir" || rouge "mise à jour impossible : $dir (modifications locales ?)"
+  elif git clone --quiet "$url" "$dir" 2>/dev/null; then
+    vert "cloné : $dir"
+  else
+    return 1
+  fi
+}
+
+preparer_squad() {
+  etape "Dépôts de $SQUAD dans $WORK_DIR"
+  local nexus="$WORK_DIR/context-nexus" starter="$WORK_DIR/starter-$SQUAD"
+  mkdir -p "$WORK_DIR"
+  cloner_ou_mettre_a_jour "$NEXUS_URL" "$nexus" || { rouge "impossible de cloner le contexte partagé ($NEXUS_URL)"; return 1; }
+  if ! cloner_ou_mettre_a_jour "$GITHUB_BASE/starter-$SQUAD.git" "$starter"; then
+    rouge "le dépôt starter-$SQUAD n'est pas encore disponible : relancez la même commande le jour J"
+    starter=""
+  fi
+  etape "Contexte de $SQUAD"
+  if [ -n "$starter" ]; then
+    node "$nexus/tools/context-assemble.mjs" --squad "$SQUAD" --out "$starter/.context/brief.md" | tail -2
+    if [ -f "$starter/package.json" ]; then
+      (cd "$starter" && npm install --silent >/dev/null 2>&1) && vert "dépendances npm installées" || rouge "npm install a échoué dans $starter"
+    fi
+  else
+    node "$nexus/tools/context-assemble.mjs" --squad "$SQUAD" | tail -2
+  fi
+}
+
 bilan() {
   etape "Bilan"
   local ko=0 ligne
@@ -105,9 +151,16 @@ bilan() {
       rouge "✗ $(printf '%-8s' "$outil") absent"; ko=1
     fi
   done
+  if [ -n "$SQUAD" ]; then
+    [ -d "$WORK_DIR/context-nexus/.git" ] && vert "✓ contexte  $WORK_DIR/context-nexus" || { rouge "✗ contexte  non cloné"; ko=1; }
+    [ -d "$WORK_DIR/starter-$SQUAD/.git" ] && vert "✓ starter   $WORK_DIR/starter-$SQUAD" || rouge "✗ starter   pas encore disponible (à relancer le jour J)"
+  fi
   echo
   if [ "$ko" -eq 0 ]; then
     vert "Tout est prêt. Ouvrez un NOUVEAU terminal, puis suivez la fiche de démarrage."
+    if [ -d "$WORK_DIR/starter-$SQUAD/.git" ]; then
+      echo "  cd ~/hackathon/starter-$SQUAD && claude auth login && claude"
+    fi
   else
     rouge "Il manque quelque chose. Copiez ce bilan et envoyez-le au support du hackathon."
   fi
@@ -119,6 +172,11 @@ if [ "$(uname -s)" != "Darwin" ]; then
   exit 1
 fi
 
+if [ -n "$SQUAD" ] && [[ " $SQUADS " != *" $SQUAD "* ]]; then
+  rouge "Squad inconnue : « $SQUAD ». Choisissez parmi : $SQUADS"
+  exit 1
+fi
+
 if [ "$CHECK_ONLY" -eq 0 ]; then
   mkdir -p "$BIN_DIR"
   ajouter_au_profil 'export PATH="$HOME/.local/bin:$PATH"'
@@ -127,5 +185,8 @@ if [ "$CHECK_ONLY" -eq 0 ]; then
   installer_claude
   installer_uv
   installer_speckit
+  if [ -n "$SQUAD" ]; then
+    if command -v git >/dev/null && node_ok; then preparer_squad; else rouge "Git ou Node manquant : dépôts non clonés"; fi
+  fi
 fi
 bilan
