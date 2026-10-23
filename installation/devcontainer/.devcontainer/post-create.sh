@@ -42,7 +42,7 @@ else
 fi
 
 if [ -f package.json ]; then echo "▸ npm install"; npm install --silent; fi
-[ -d .specify ] || echo "⚠ Spec Kit n'est pas initialisé dans ce starter : specify init --here --ai claude"
+[ -d .specify ] || echo "⚠ Spec Kit n'est pas initialisé dans ce starter : specify init --here --integration claude"
 
 echo
 echo "✓ Codespace prêt."
