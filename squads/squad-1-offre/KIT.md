@@ -159,7 +159,10 @@ node ../context-nexus/tools/context-assemble.mjs --squad squad-1-offre --mark-st
 git -C ../context-nexus log -p -3 -- teams/
 
 # Publier
-git -C ../context-nexus add teams/squad-1-offre && git -C ../context-nexus commit -m "squad-1-offre: publie <artefact> v<version>" && git -C ../context-nexus pull --rebase && git -C ../context-nexus push
+git -C ../context-nexus add teams/squad-1-offre
+git -C ../context-nexus commit -m "squad-1-offre: publie <artefact> v<version>"
+git -C ../context-nexus pull --rebase
+git -C ../context-nexus push
 ```
 
 ## Vos interlocuteurs

@@ -134,8 +134,10 @@ Fenêtre bonus après G4 : 15 min pour la squad 1, 10 pour la 2, 5 pour la 3, 0 
 # depuis le dossier du starter ; le Nexus est à ../context-nexus
 # 1. copier ou mettre à jour le fichier dans ../context-nexus/teams/<squad>/…
 # 2. frontmatter : version incrémentée, last-validated du jour, status, owner, consumes épinglés
-git -C ../context-nexus add teams/<squad> && git -C ../context-nexus commit -m "<squad>: publie <artefact> v<version>"
-git -C ../context-nexus pull --rebase && git -C ../context-nexus push
+git -C ../context-nexus add teams/<squad>
+git -C ../context-nexus commit -m "<squad>: publie <artefact> v<version>"
+git -C ../context-nexus pull --rebase
+git -C ../context-nexus push
 ```
 
 Pour publier une spec Spec Kit, copiez `specs/001-…/spec.md` dans `teams/<squad>/intent/specs/<squad>-001.md`
