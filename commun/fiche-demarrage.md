@@ -44,13 +44,15 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
    Vous ne savez pas dans quelle squad vous êtes ? Regardez le tableau de la section 1, ou demandez au support.
 
 2. La page « Create codespace » s'affiche, avec un cadre de trois réglages : **Branch** (`main`), **Region** et **Machine type**. **Ne changez rien.**
-   Aucune clé n'est demandée : vous vous connecterez avec votre compte Claude à l'étape 4.
+   Aucune clé n'est demandée : vous vous connecterez avec votre compte Claude à l'étape 5.
    Cliquez sur le bouton vert **Create codespace**, en bas à droite du cadre.
-3. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre ; en bas, un terminal affiche l'installation. C'est prêt quand il écrit **« ✓ Codespace prêt »**.
-4. **Connectez Claude à votre compte** (une seule fois) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
+3. Une page **« This codespace is requesting additional permissions »** s'affiche : GitHub demande l'accès au contexte partagé (`zenika-dev/ai4d-hackathon-context-nexus`), pour que vous puissiez y publier votre travail.
+   Cliquez sur le bouton vert **Authorize and continue**. (Évitez « Continue without authorizing » : vous ne pourriez pas publier dans le contexte partagé.)
+4. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre ; en bas, un terminal affiche l'installation. C'est prêt quand il écrit **« ✓ Codespace prêt »**.
+5. **Connectez Claude à votre compte** (une seule fois) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
    - Un lien s'affiche : ouvrez-le (Ctrl + clic, ou Cmd + clic sur Mac), connectez-vous avec votre compte Claude habituel, cliquez sur **Autoriser**.
    - Si la page affiche un **code**, copiez-le, revenez dans le terminal, collez-le, Entrée.
-5. **Parlez à l'agent** : icône Claude dans la barre de gauche. Écrivez-lui :
+6. **Parlez à l'agent** : icône Claude dans la barre de gauche. Écrivez-lui :
    > Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons.
 
    S'il cite votre volet et les contrats des autres squads, vous êtes prêt.
