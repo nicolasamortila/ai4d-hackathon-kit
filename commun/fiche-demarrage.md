@@ -43,8 +43,9 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
 1. **Connectez-vous à GitHub**, puis cliquez sur le lien **« Ouvrir votre Codespace »** de votre squad (tableau « Vos liens »).
 2. La page « Create a new codespace » s'affiche. *Autre chemin, si le lien ne marche pas : ouvrez le dépôt de votre squad,
    bouton vert **Code** → onglet **Codespaces** → **…** → **New with options…**.*
-3. La page propose des champs `ANTHROPIC_…` : **laissez-les tous vides**. Vous vous connecterez avec votre compte Claude à l'étape 5,
-   pas avec une clé. Cliquez sur **Create codespace**.
+3. La page affiche un cadre avec trois réglages : **Branch** (`main`), **Region** et **Machine type**. **Ne changez rien.**
+   Si des champs `ANTHROPIC_…` apparaissent, **laissez-les vides** : vous vous connecterez avec votre compte Claude à l'étape 5, pas avec une clé.
+   Cliquez sur le bouton vert **Create codespace**, en bas à droite du cadre.
 4. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre dans l'onglet ; en bas, un terminal affiche l'installation.
    C'est prêt quand il écrit **« ✓ Codespace prêt »**.
 5. **Connectez Claude à votre compte** (une seule fois par Codespace) : dans le terminal en bas, tapez `claude auth login` puis Entrée.

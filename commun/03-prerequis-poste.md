@@ -17,7 +17,7 @@ Il faut seulement un navigateur et un compte GitHub.
 
 1. Créez un compte sur [github.com](https://github.com) si vous n'en avez pas, et envoyez votre identifiant au support.
 2. Le jour J, ouvrez le dépôt de votre squad, puis cliquez sur **Code → Codespaces → … → New with options…**.
-3. Laissez vides les champs `ANTHROPIC_…`, cliquez sur **Create codespace**, puis attendez 2 à 4 minutes.
+3. Ne changez aucun réglage (laissez vides les champs `ANTHROPIC_…` s'il y en a), cliquez sur le bouton vert **Create codespace** en bas à droite, puis attendez 2 à 4 minutes.
 
 Le pas à pas illustré est dans la **fiche de démarrage** (`fiche-demarrage.md`, voie A).
 
