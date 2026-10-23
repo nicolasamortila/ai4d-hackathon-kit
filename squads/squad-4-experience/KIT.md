@@ -13,8 +13,8 @@
    puis `claude auth login` avec votre compte Claude.
 3. **Assembler votre contexte** (déjà fait par le Codespace ou par le script ; à relancer au début de chaque bloc) :
    ```bash
-   cd ~/hackathon/context-nexus
-   node tools/context-assemble.mjs --squad squad-4-experience --out ../starter-squad-4-experience/.context/brief.md
+   cd ~/hackathon/starter-squad-4-experience     # dans un Codespace, vous y êtes déjà
+   node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --out .context/brief.md
    ```
 4. **Vérifier l'agent** : dans `starter-squad-4-experience`, lancer `claude` et demander « Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons ». Taper `/speckit` pour voir les commandes.
 5. **À 14h15, Discover** : le Context Engineer lit les contrats voisins, le Specification Engineer copie `gabarits/business-intent.md` dans `teams/squad-4-experience/intent/` et tient la plume.
@@ -79,7 +79,7 @@ Squad 4 : décalage de **15 minutes** par rapport à la squad 1.
 
 Règles de coupe : G2 pas passée 10 minutes après son créneau → le Develop devient guidé par le coach. G4 pas passée à 16h55 → la squad prépare sa démo.
 
-Avant chaque créneau : gate-check, puis `node tools/context-assemble.mjs --squad squad-4-experience --check`. Après chaque gate : fiche de retour (20 secondes).
+Avant chaque créneau : gate-check, puis `node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --check` (depuis le dossier du starter). Après chaque gate : fiche de retour (20 secondes).
 
 ## Ce que vous publiez, ce que vous consommez
 
@@ -150,18 +150,19 @@ Un no-go renvoie vers l'étape gardée et nomme le critère qui manque. G5 et G6
 
 ```bash
 # Assembler le contexte de la squad (début de chaque bloc, et après toute publication annoncée)
-cd ~/hackathon/context-nexus && git pull
-node tools/context-assemble.mjs --squad squad-4-experience --out ../starter-squad-4-experience/.context/brief.md
+# À lancer depuis le dossier du starter (là où l'on lance claude) ; le Nexus est à ../context-nexus
+git -C ../context-nexus pull
+node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --out .context/brief.md
 
 # Vérifier avant une gate (code retour 1 = quelque chose est stale)
-node tools/context-assemble.mjs --squad squad-4-experience --check
+node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --check
 
 # Quand un contrat a changé : marquer ses artefacts stale, puis lire le changement
-node tools/context-assemble.mjs --squad squad-4-experience --mark-stale
-git log -p -3 -- teams/
+node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --mark-stale
+git -C ../context-nexus log -p -3 -- teams/
 
 # Publier
-git add teams/squad-4-experience && git commit -m "squad-4-experience: publie <artefact> v<version>" && git pull --rebase && git push
+git -C ../context-nexus add teams/squad-4-experience && git -C ../context-nexus commit -m "squad-4-experience: publie <artefact> v<version>" && git -C ../context-nexus pull --rebase && git -C ../context-nexus push
 ```
 
 ## Vos interlocuteurs
