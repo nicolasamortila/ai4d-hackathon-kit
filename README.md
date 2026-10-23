@@ -35,7 +35,7 @@ curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/
 
 Remplacez `squad-2-prix` par votre squad. Sans nom de squad, seuls les outils sont installés.
 
-Détails : [`commun/03-prerequis-poste.md`](commun/03-prerequis-poste.md). Pour les starters en Codespaces : [`installation/devcontainer/`](installation/devcontainer/README.md).
+Détails : [`commun/03-prerequis-poste.md`](commun/03-prerequis-poste.md). Pour les starters en Codespaces : [`installation/devcontainer/`](installation/devcontainer/).
 
 ## Contenu
 
