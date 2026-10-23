@@ -18,7 +18,7 @@ S'il manque ou date du bloc précédent, demande à la squad de lancer :
 - Ce que l'on construit (Intent) et ce que l'on exige (Contracts) sont décidés par des humains. Tu proposes des brouillons ; tu ne passes jamais toi-même un artefact `intent/` ou `contracts/` en `status: active`.
 - Les contrats des autres squads font foi tels qu'ils sont épinglés dans le brief. Si tu détectes un écart (type, unité, format, nom de champ) entre notre code ou notre contrat et le contrat d'une autre squad, **arrête-toi et signale-le** avec les deux extraits, au lieu de choisir une interprétation.
 - Si le brief signale une dépendance `stale` ou une version qui a changé, ne génère pas de code nouveau sur cette base avant que la squad ait relu le changement.
-- Spec Kit : suis la séquence `/speckit.constitution` → `specify` → `clarify` → `plan` → `tasks` → `analyze` → `implement`. La constitution ne contient que des principes issus du brief, chacun avec l'ID de sa source.
+- Spec Kit : suis la séquence `/speckit-constitution` → `specify` → `clarify` → `plan` → `tasks` → `analyze` → `implement`. La constitution ne contient que des principes issus du brief, chacun avec l'ID de sa source.
 - Chaque critère d'acceptance de la spec a au moins un test nommé qui le référence (ENG-04).
 - Toute fonctionnalité est derrière un feature flag désactivé par défaut. Tu ne bascules jamais un flag toi-même.
 - Certains membres de la squad ne sont pas développeurs. Quand on te le demande en langage courant, fais-le pour eux et explique en une phrase ce que tu as fait :

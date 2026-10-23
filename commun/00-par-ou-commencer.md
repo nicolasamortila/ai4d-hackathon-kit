@@ -47,7 +47,7 @@ npm install && npm test               # tests verts
 specify check
 ```
 > Pas de `CLAUDE.md` ? Copiez celui de `squads/<votre-squad>/CLAUDE.md` à la racine du starter.
-> Pas de dossier `.specify/` ? Lancez `specify init --here --ai claude`.
+> Pas de dossier `.specify/` ? Lancez `specify init --here --integration claude`.
 
 **5. Premier contact avec l'agent**
 ```bash
@@ -60,7 +60,7 @@ construire, quels contrats nous publions, lesquels nous consommons et à quelles
 ```
 Si la réponse cite votre volet et les contrats de vos voisines, l'agent voit bien le Context Nexus. Vous êtes prêts.
 
-Tapez aussi `/speckit` : les commandes `/speckit.constitution` à `/speckit.implement` doivent apparaître.
+Tapez aussi `/speckit` : les commandes `/speckit-constitution` à `/speckit-implement` doivent apparaître.
 
 ## La première heure · 13 h 30 – 14 h 30 (horaires de la squad 1, +5 min par squad)
 
@@ -102,7 +102,7 @@ node tools/context-assemble.mjs --squad <votre-squad> --check
 
 ### À partir de 1:00 · Design → G2
 
-Enchaîner `/speckit.constitution` → `/speckit.specify` → `/speckit.clarify` → `/speckit.plan` → `/speckit.tasks` → `/speckit.analyze`,
+Enchaîner `/speckit-constitution` → `/speckit-specify` → `/speckit-clarify` → `/speckit-plan` → `/speckit-tasks` → `/speckit-analyze`,
 puis publier le contrat v1. Tout est détaillé, avec les prompts, dans `02-spec-kit-x-context-nexus.md`.
 
 ## Les trois réflexes pour toute la session

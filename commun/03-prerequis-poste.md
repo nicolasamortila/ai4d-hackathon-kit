@@ -41,7 +41,7 @@ curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/
 
 Remplacez `squad-2-prix` par votre squad (`squad-1-offre`, `squad-2-prix`, `squad-3-paiement`, `squad-4-experience`).
 Avec ce nom, le script clone aussi le contexte partagé et le dépôt de votre squad dans `hackathon/`, et assemble le contexte.
-Sans nom, il installe seulement les outils. Le jour J, relancez la même ligne : elle récupère le dépôt de votre squad.
+Sans nom, il installe seulement les outils. Le jour J, relancez la même ligne : elle met les dépôts à jour.
 
 Le script installe ce qui manque parmi Git, Node.js 22, Claude Code, uv et Spec Kit, puis affiche un bilan.
 - Tout est vert : fermez la fenêtre, ouvrez-en une nouvelle. Vous êtes prêt.

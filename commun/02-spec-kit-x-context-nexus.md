@@ -39,7 +39,7 @@ specify check
 
 > Le `CLAUDE.md` de votre squad (dossier `squads/<squad>/` du kit) doit être à la racine du starter. Sinon, copiez-le.
 
-> Si le starter n'a pas encore été initialisé avec Spec Kit : `specify init --here --ai claude`.
+> Si le starter n'a pas encore été initialisé avec Spec Kit : `specify init --here --integration claude`.
 
 Le **Context Engineer** relance l'assemblage **au début de chaque bloc** et dès que quelqu'un annonce une publication.
 
@@ -62,31 +62,31 @@ Ne rédige pas la Business Intent Spec : pose les questions.
 
 | Étape | Commande | Ce que vous donnez à l'agent | Durée indicative |
 |---|---|---|---|
-| 1 | `/speckit.constitution` | Les sections « system prompt » de `.context/brief.md` (règles org, contracts, conventions) | 5 min |
-| 2 | `/speckit.specify` | Votre `business-intent.md` + votre contrat v0 | 10 min |
-| 3 | `/speckit.clarify` | Rien : répondez à ses questions. Les réponses qui touchent une voisine → allez la voir | 5 min |
-| 4 | `/speckit.plan` | La stack du starter + les contrats voisins épinglés (Specification Engineer et Orchestrator) | 10 min |
-| 5 | `/speckit.tasks` | Rien | 3 min |
-| 6 | `/speckit.analyze` | Rien : lisez son rapport, corrigez | 5 min |
+| 1 | `/speckit-constitution` | Les sections « system prompt » de `.context/brief.md` (règles org, contracts, conventions) | 5 min |
+| 2 | `/speckit-specify` | Votre `business-intent.md` + votre contrat v0 | 10 min |
+| 3 | `/speckit-clarify` | Rien : répondez à ses questions. Les réponses qui touchent une voisine → allez la voir | 5 min |
+| 4 | `/speckit-plan` | La stack du starter + les contrats voisins épinglés (Specification Engineer et Orchestrator) | 10 min |
+| 5 | `/speckit-tasks` | Rien | 3 min |
+| 6 | `/speckit-analyze` | Rien : lisez son rapport, corrigez | 5 min |
 | 7 | Publier contrat v1 + spec | Voir « Publier » | 7 min |
 
 Prompt pour la constitution :
 ```
-/speckit.constitution Construis la constitution uniquement à partir des règles et contracts de la section
+/speckit-constitution Construis la constitution uniquement à partir des règles et contracts de la section
 "system prompt" de .context/brief.md. Chaque principe cite l'ID de sa source (ex. SEC-02, API-02, ENG-04).
 N'ajoute aucun principe qui n'y figure pas : s'il en manque un, signale-le.
 ```
 
 Prompt pour la spec :
 ```
-/speckit.specify <contenu de teams/<squad>/intent/business-intent.md>
+/speckit-specify <contenu de teams/<squad>/intent/business-intent.md>
 Contexte : notre contrat v0 est dans .context/brief.md. Les critères d'acceptance doivent être vérifiables
 par un test automatique et référencer les règles RM-xx et les contracts (API-xx, SEC-xx…) qu'ils satisfont.
 ```
 
 Prompt pour le plan :
 ```
-/speckit.plan Stack : celle du starter (TypeScript, tests et CI fournis). Les contrats des autres squads
+/speckit-plan Stack : celle du starter (TypeScript, tests et CI fournis). Les contrats des autres squads
 sont dans .context/brief.md, en versions épinglées : tu les consommes tels quels, tu ne les modifies pas.
 Pour chaque champ échangé avec une autre squad, vérifie type, unité et format, et liste les écarts trouvés.
 ```
@@ -98,7 +98,7 @@ Pour chaque champ échangé avec une autre squad, vérifie type, unité et forma
 
 ## Develop (→ G3) · implémenter, et encaisser un changement
 
-1. `/speckit.implement` tâche par tâche. L'Orchestrator garde un œil sur le budget de tokens.
+1. `/speckit-implement` tâche par tâche. L'Orchestrator garde un œil sur le budget de tokens.
 2. Après chaque tâche : tests verts, commit. Les critères d'acceptance ont chacun un test nommé (ENG-04).
 3. **Pendant le Develop, un contrat voisin change** (c'est l'événement scripté de la session, annoncé sur l'écran commun). Le Context Engineer lance :
    ```bash
@@ -108,7 +108,7 @@ Pour chaque champ échangé avec une autre squad, vérifie type, unité et forma
    ```
 4. Si vos artefacts passent `stale` :
    ```
-   /speckit.clarify Le contrat <chemin> est passé de la version X à Y (voir .context/brief.md).
+   /speckit-clarify Le contrat <chemin> est passé de la version X à Y (voir .context/brief.md).
    Quelles exigences, quels critères d'acceptance et quelles tâches de notre spec sont impactés ?
    ```
    Puis mettez à jour spec → plan → tâches, implémentez, **ré-épinglez** (`consumes: …@Y`), repassez en `active`, publiez.

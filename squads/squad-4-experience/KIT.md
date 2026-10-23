@@ -65,7 +65,7 @@ Squad 4 : décalage de **15 minutes** par rapport à la squad 1.
 | 14h15 – 14h45 | 0:45 – 1:15 | **Discover** : lire le contexte des voisines, besoin à 5 champs, données, priorité |
 | 14h45 – 15h30 | 1:15 – 2:00 | **Design** : constitution → spec → plan → tâches → analyze, contrat v1 publié |
 | 15h30 – 15h40 | 2:00 – 2:10 | Pause |
-| 15h40 – 16h30 | 2:10 – 3:00 | **Develop** : `/speckit.implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
+| 15h40 – 16h30 | 2:10 – 3:00 | **Develop** : `/speckit-implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
 | 16h30 – 16h55 | 3:00 – 3:25 | **Deploy** : déploiement, bascule de flag tracée, KPI et événements publiés |
 | 16h55 – 17h30 | 3:25 – 4:00 | Débrief commun : préparation de la démo (10'), démos croisées (5'), rétro du TOM (10'), retour pour le 8 h (10') |
 
@@ -112,15 +112,15 @@ Un écart entre votre contrat et celui d'une voisine se règle **en allant la vo
 
 ## Spec Kit, adapté à votre volet
 
-Point de départ pour `/speckit.specify` (à réécrire avec votre Business Intent Spec) :
+Point de départ pour `/speckit-specify` (à réécrire avec votre Business Intent Spec) :
 
 ```
-/speckit.specify Depuis « Gérer ma réservation », le client voit s'il peut partir plus tard, choisit un créneau, paie en ligne ou à l'hôtel et retrouve sa nouvelle heure de départ ; chaque étape émet un événement d'achat exploitable par les KPI.
+/speckit-specify Depuis « Gérer ma réservation », le client voit s'il peut partir plus tard, choisit un créneau, paie en ligne ou à l'hôtel et retrouve sa nouvelle heure de départ ; chaque étape émet un événement d'achat exploitable par les KPI.
 Source : teams/squad-4-experience/intent/business-intent.md. Critères d'acceptance vérifiables par un test,
 chacun rattaché à une règle RM-xx ou à un contract (API-xx, SEC-xx, A11Y-xx, ENG-xx).
 ```
 
-Questions utiles pour `/speckit.clarify` et pour vos échanges avec les voisines :
+Questions utiles pour `/speckit-clarify` et pour vos échanges avec les voisines :
 
 - Comment afficher un prix reçu d'Offre dans le format Vela DS, et lu correctement par VoiceOver / TalkBack ?
 - Quel montant mettez-vous dans `amount_minor`, et à partir de quel champ de quel contrat ?

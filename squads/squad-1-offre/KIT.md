@@ -64,7 +64,7 @@ Squad 1 : vos horaires servent de référence ; les squads 2, 3 et 4 sont décal
 | 14h00 – 14h30 | 0:30 – 1:00 | **Discover** : lire le contexte des voisines, besoin à 5 champs, données, priorité |
 | 14h30 – 15h15 | 1:00 – 1:45 | **Design** : constitution → spec → plan → tâches → analyze, contrat v1 publié |
 | 15h15 – 15h25 | 1:45 – 1:55 | Pause |
-| 15h25 – 16h15 | 1:55 – 2:45 | **Develop** : `/speckit.implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
+| 15h25 – 16h15 | 1:55 – 2:45 | **Develop** : `/speckit-implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
 | 16h15 – 16h40 | 2:45 – 3:10 | **Deploy** : déploiement, bascule de flag tracée, KPI et événements publiés |
 | 16h40 – 16h55 | 3:10 – 3:25 | **Bonus** (15 min) : Deepen (G5) et Drop (G6), version courte, si le temps le permet |
 | 16h55 – 17h30 | 3:25 – 4:00 | Débrief commun : préparation de la démo (10'), démos croisées (5'), rétro du TOM (10'), retour pour le 8 h (10') |
@@ -110,15 +110,15 @@ Un écart entre votre contrat et celui d'une voisine se règle **en allant la vo
 
 ## Spec Kit, adapté à votre volet
 
-Point de départ pour `/speckit.specify` (à réécrire avec votre Business Intent Spec) :
+Point de départ pour `/speckit-specify` (à réécrire avec votre Business Intent Spec) :
 
 ```
-/speckit.specify L'API d'offre décide l'éligibilité d'une réservation au late check-out (RM-01 à RM-04) et calcule le prix de chaque créneau à partir des bornes publiées par la squad Prix et des horaires de l'hôtel.
+/speckit-specify L'API d'offre décide l'éligibilité d'une réservation au late check-out (RM-01 à RM-04) et calcule le prix de chaque créneau à partir des bornes publiées par la squad Prix et des horaires de l'hôtel.
 Source : teams/squad-1-offre/intent/business-intent.md. Critères d'acceptance vérifiables par un test,
 chacun rattaché à une règle RM-xx ou à un contract (API-xx, SEC-xx, A11Y-xx, ENG-xx).
 ```
 
-Questions utiles pour `/speckit.clarify` et pour vos échanges avec les voisines :
+Questions utiles pour `/speckit-clarify` et pour vos échanges avec les voisines :
 
 - Que répond l'API quand une donnée nécessaire au calcul manque ?
 - Quelle heure fait foi pour « la veille 22:00 » : serveur, client ou hôtel ?
@@ -141,7 +141,7 @@ Un no-go renvoie vers l'étape gardée et nomme le critère qui manque. G5 et G6
 ## Points d'attention pour votre squad
 
 - Vous êtes la dépendance de deux squads : publiez votre contrat v1 **et un mock** le plus tôt possible en Design.
-- Pas de profil développeur pur : décidez au cadrage qui tient le clavier pendant `/speckit.implement`.
+- Pas de profil développeur pur : décidez au cadrage qui tient le clavier pendant `/speckit-implement`.
 
 ## Commandes de survie
 

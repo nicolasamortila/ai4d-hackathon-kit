@@ -65,7 +65,7 @@ Squad 2 : décalage de **5 minutes** par rapport à la squad 1.
 | 14h05 – 14h35 | 0:35 – 1:05 | **Discover** : lire le contexte des voisines, besoin à 5 champs, données, priorité |
 | 14h35 – 15h20 | 1:05 – 1:50 | **Design** : constitution → spec → plan → tâches → analyze, contrat v1 publié |
 | 15h20 – 15h30 | 1:50 – 2:00 | Pause |
-| 15h30 – 16h20 | 2:00 – 2:50 | **Develop** : `/speckit.implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
+| 15h30 – 16h20 | 2:00 – 2:50 | **Develop** : `/speckit-implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
 | 16h20 – 16h45 | 2:50 – 3:15 | **Deploy** : déploiement, bascule de flag tracée, KPI et événements publiés |
 | 16h45 – 16h55 | 3:15 – 3:25 | **Bonus** (10 min) : Deepen (G5) et Drop (G6), version courte, si le temps le permet |
 | 16h55 – 17h30 | 3:25 – 4:00 | Débrief commun : préparation de la démo (10'), démos croisées (5'), rétro du TOM (10'), retour pour le 8 h (10') |
@@ -112,15 +112,15 @@ Un écart entre votre contrat et celui d'une voisine se règle **en allant la vo
 
 ## Spec Kit, adapté à votre volet
 
-Point de départ pour `/speckit.specify` (à réécrire avec votre Business Intent Spec) :
+Point de départ pour `/speckit-specify` (à réécrire avec votre Business Intent Spec) :
 
 ```
-/speckit.specify La règle de prix fixe le plancher et le plafond du supplément de late check-out selon l'occupation prévue de l'hôtel pour la nuit du départ, et les KPI de l'offre sont calculés à partir des événements d'achat et des réservations éligibles.
+/speckit-specify La règle de prix fixe le plancher et le plafond du supplément de late check-out selon l'occupation prévue de l'hôtel pour la nuit du départ, et les KPI de l'offre sont calculés à partir des événements d'achat et des réservations éligibles.
 Source : teams/squad-2-prix/intent/business-intent.md. Critères d'acceptance vérifiables par un test,
 chacun rattaché à une règle RM-xx ou à un contract (API-xx, SEC-xx, A11Y-xx, ENG-xx).
 ```
 
-Questions utiles pour `/speckit.clarify` et pour vos échanges avec les voisines :
+Questions utiles pour `/speckit-clarify` et pour vos échanges avec les voisines :
 
 - D'où vient la prévision d'occupation, de quand date-t-elle, et que fait la règle quand elle manque ?
 - Avec quels paramètres Offre et Paiement appellent-ils votre règle, et que leur renvoyez-vous quand aucun LCO n'est vendable ?

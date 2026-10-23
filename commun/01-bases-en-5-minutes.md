@@ -34,13 +34,15 @@ Spec Kit (GitHub) fait passer l'agent de « code d'abord » à « spec d'abord �
 
 | Commande | Ce qu'elle produit | Chapeau qui tient la plume |
 |---|---|---|
-| `/speckit.constitution` | Les principes non négociables du projet (`.specify/memory/constitution.md`) | Context Engineer |
-| `/speckit.specify` | La spec fonctionnelle : le **quoi** et le **pourquoi**, pas le comment | Specification Engineer |
-| `/speckit.clarify` | Les questions que la spec laisse ouvertes, et vos réponses | toute la squad |
-| `/speckit.plan` | Le plan technique, le modèle de données, les **contrats d'API** | Specification Engineer + Orchestrator |
-| `/speckit.tasks` | La liste ordonnée des tâches, testables une à une | Orchestrator |
-| `/speckit.analyze` | La cohérence spec / plan / tâches / constitution | Decision Guarantor relit |
-| `/speckit.implement` | Le code, tâche par tâche | l'agent, piloté par l'Orchestrator |
+| `/speckit-constitution` | Les principes non négociables du projet (`.specify/memory/constitution.md`) | Context Engineer |
+| `/speckit-specify` | La spec fonctionnelle : le **quoi** et le **pourquoi**, pas le comment | Specification Engineer |
+| `/speckit-clarify` | Les questions que la spec laisse ouvertes, et vos réponses | toute la squad |
+| `/speckit-plan` | Le plan technique, le modèle de données, les **contrats d'API** | Specification Engineer + Orchestrator |
+| `/speckit-tasks` | La liste ordonnée des tâches, testables une à une | Orchestrator |
+| `/speckit-analyze` | La cohérence spec / plan / tâches / constitution | Decision Guarantor relit |
+| `/speckit-implement` | Le code, tâche par tâche | l'agent, piloté par l'Orchestrator |
+
+La version installée ajoute deux commandes facultatives : `/speckit-checklist` (grilles de qualité de la spec) et `/speckit-converge` (réaligner spec, plan et code).
 
 Règle d'or : **l'agent rédige, un humain relit et signe**. Une spec que personne n'a relue n'est pas une spec.
 

@@ -53,15 +53,14 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
 La ligne de **votre section** installe Git, Node.js, Claude Code et Spec Kit (sans droits administrateur), clone le contexte partagé
 et le dépôt de votre squad dans le dossier `hackathon` de votre profil, assemble le contexte de la squad, puis affiche un bilan.
 
-- **Avant le 23/10** : lancez-la une fois. Le bilan doit être vert, **sauf la ligne « starter »** : le dépôt de votre squad n'ouvre que le jour J.
-  Une autre ligne rouge ? Envoyez le bilan au support avant le 23/10.
-- **Le jour J, à 12 h 30** : relancez **la même ligne**, puis les trois commandes « Le jour J » de votre section.
+- **Avant le 23/10** : lancez-la une fois. Le bilan doit être **tout vert**. Une ligne rouge ? Envoyez le bilan au support avant le 23/10.
+- **Le jour J, à 12 h 30** : relancez **la même ligne** (elle met tout à jour), puis les trois commandes « Le jour J » de votre section.
 - Windows : collez la ligne dans **PowerShell** (menu Démarrer, tapez « PowerShell »). macOS : dans **Terminal** (Cmd + Espace, tapez « Terminal »).
 
 ## 5. Travailler avec Claude (les deux voies)
 
 On parle à Claude en français, dans le panneau Claude (ou en tapant `claude` dans le terminal). Il propose ses modifications et attend votre accord.
-Les commandes Spec Kit (`/speckit.specify`, `/speckit.clarify`…) se tapent au même endroit.
+Les commandes Spec Kit (`/speckit-specify`, `/speckit-clarify`…) se tapent au même endroit.
 
 | Vous voulez | Écrivez à Claude |
 |---|---|

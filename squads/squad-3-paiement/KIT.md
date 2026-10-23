@@ -65,7 +65,7 @@ Squad 3 : décalage de **10 minutes** par rapport à la squad 1.
 | 14h10 – 14h40 | 0:40 – 1:10 | **Discover** : lire le contexte des voisines, besoin à 5 champs, données, priorité |
 | 14h40 – 15h25 | 1:10 – 1:55 | **Design** : constitution → spec → plan → tâches → analyze, contrat v1 publié |
 | 15h25 – 15h35 | 1:55 – 2:05 | Pause |
-| 15h35 – 16h25 | 2:05 – 2:55 | **Develop** : `/speckit.implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
+| 15h35 – 16h25 | 2:05 – 2:55 | **Develop** : `/speckit-implement` tâche par tâche · ⚡ un contrat voisin change pendant ce bloc |
 | 16h25 – 16h50 | 2:55 – 3:20 | **Deploy** : déploiement, bascule de flag tracée, KPI et événements publiés |
 | 16h50 – 16h55 | 3:20 – 3:25 | **Bonus** (5 min) : Deepen (G5) et Drop (G6), version courte, si le temps le permet |
 | 16h55 – 17h30 | 3:25 – 4:00 | Débrief commun : préparation de la démo (10'), démos croisées (5'), rétro du TOM (10'), retour pour le 8 h (10') |
@@ -113,15 +113,15 @@ Un écart entre votre contrat et celui d'une voisine se règle **en allant la vo
 
 ## Spec Kit, adapté à votre volet
 
-Point de départ pour `/speckit.specify` (à réécrire avec votre Business Intent Spec) :
+Point de départ pour `/speckit-specify` (à réécrire avec votre Business Intent Spec) :
 
 ```
-/speckit.specify Le service de paiement encaisse le supplément de late check-out en ligne via PayVel ou l'ajoute à la note de chambre, en recalculant côté serveur un montant conforme à l'offre et aux bornes de prix, sans jamais manipuler de donnée de carte.
+/speckit-specify Le service de paiement encaisse le supplément de late check-out en ligne via PayVel ou l'ajoute à la note de chambre, en recalculant côté serveur un montant conforme à l'offre et aux bornes de prix, sans jamais manipuler de donnée de carte.
 Source : teams/squad-3-paiement/intent/business-intent.md. Critères d'acceptance vérifiables par un test,
 chacun rattaché à une règle RM-xx ou à un contract (API-xx, SEC-xx, A11Y-xx, ENG-xx).
 ```
 
-Questions utiles pour `/speckit.clarify` et pour vos échanges avec les voisines :
+Questions utiles pour `/speckit-clarify` et pour vos échanges avec les voisines :
 
 - Comment recalculez-vous le montant côté serveur (SEC-05), et à partir de quelle source ?
 - Qui, nommément, signe le code qui déclenche un débit ? Quand ?
