@@ -1,7 +1,21 @@
 # Fiche de démarrage · Hackathon Champions
 
 **Lundi 26 octobre · 13 h 30 – 17 h 30 · installation dès 12 h 30**
-Votre squad, votre chapeau et vos horaires de gate : `squads/<votre-squad>/KIT.md` sur [ai4d-hackathon-kit](https://github.com/zenika-dev/ai4d-hackathon-kit).
+Votre squad, votre chapeau et vos horaires de gate : votre fiche squad, ci-dessous.
+
+## Vos liens
+
+| Squad | Votre fiche | Ouvrir votre Codespace | Dépôt de la squad | Dossier de la squad dans le contexte |
+|---|---|---|---|---|
+| **1 · Offre** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-1-offre/KIT.md) | [codespaces.new/…/starter-squad-1-offre](https://codespaces.new/zenika-dev/starter-squad-1-offre) | [starter-squad-1-offre](https://github.com/zenika-dev/starter-squad-1-offre) | [teams/squad-1-offre](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-1-offre) |
+| **2 · Prix** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-2-prix/KIT.md) | [codespaces.new/…/starter-squad-2-prix](https://codespaces.new/zenika-dev/starter-squad-2-prix) | [starter-squad-2-prix](https://github.com/zenika-dev/starter-squad-2-prix) | [teams/squad-2-prix](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-2-prix) |
+| **3 · Paiement** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-3-paiement/KIT.md) | [codespaces.new/…/starter-squad-3-paiement](https://codespaces.new/zenika-dev/starter-squad-3-paiement) | [starter-squad-3-paiement](https://github.com/zenika-dev/starter-squad-3-paiement) | [teams/squad-3-paiement](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-3-paiement) |
+| **4 · Expérience** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-4-experience/KIT.md) | [codespaces.new/…/starter-squad-4-experience](https://codespaces.new/zenika-dev/starter-squad-4-experience) | [starter-squad-4-experience](https://github.com/zenika-dev/starter-squad-4-experience) | [teams/squad-4-experience](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-4-experience) |
+
+Contexte partagé (les 4 squads) : [github.com/zenika-dev/ai4d-hackathon-context-nexus](https://github.com/zenika-dev/ai4d-hackathon-context-nexus) ·
+Kit complet : [github.com/zenika-dev/ai4d-hackathon-kit](https://github.com/zenika-dev/ai4d-hackathon-kit)
+
+> Les dépôts de squad (`starter-…`) et donc les liens Codespace seront actifs au plus tard le lundi 26/10 à 12 h 30.
 
 **Deux postes prêts par squad suffisent.** Choisissez votre voie :
 
@@ -25,8 +39,9 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
 
 ### Le jour J, à 12 h 30
 
-1. **Ouvrez le dépôt de votre squad** dans votre navigateur (adresse affichée sur l'écran commun et sur votre table) et connectez-vous à GitHub.
-2. Cliquez sur le bouton vert **Code**, puis sur l'onglet **Codespaces**, puis sur **…** → **New with options…**.
+1. **Connectez-vous à GitHub**, puis cliquez sur le lien **« Ouvrir votre Codespace »** de votre squad (tableau « Vos liens »).
+2. La page « Create a new codespace » s'affiche. *Autre chemin, si le lien ne marche pas : ouvrez le dépôt de votre squad,
+   bouton vert **Code** → onglet **Codespaces** → **…** → **New with options…**.*
 3. Sur la page qui s'ouvre, collez la **clé agent de la squad** dans le champ indiqué sur la **carte de squad** posée sur votre table
    (en général `ANTHROPIC_API_KEY`). Laissez les autres champs vides, sauf indication de la carte. Cliquez sur **Create codespace**.
 4. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre dans l'onglet ; en bas, un terminal affiche l'installation.
@@ -63,6 +78,7 @@ Il lit les fichiers, propose des modifications et vous demande votre accord avan
 
 - Les fichiers sont à gauche : votre dépôt de squad, et le contexte partagé dans le dossier `context-nexus` à côté.
 - Vous avez fermé l'onglet ? Retrouvez votre Codespace sur [github.com/codespaces](https://github.com/codespaces). Rien n'est perdu.
+  Ne recliquez pas sur le lien « Ouvrir votre Codespace » : il en créerait un deuxième, vide de votre travail non publié.
 - Après 30 minutes sans activité, le Codespace se met en veille : rouvrez-le, il redémarre en quelques secondes.
 - Le terminal ne vous parle pas ? Vous n'en avez pas besoin : le Context Engineer de la squad lance les commandes. Vous travaillez avec l'agent.
 
@@ -92,7 +108,7 @@ Le bilan doit être tout vert. Une ligne rouge : envoyez le bilan au support **a
 # 1. Cloner le contexte partagé et le dépôt de votre squad, côte à côte
 mkdir -p ~/hackathon && cd ~/hackathon
 git clone https://github.com/zenika-dev/ai4d-hackathon-context-nexus.git context-nexus
-git clone <adresse-du-depot-de-votre-squad> starter-<squad>
+git clone https://github.com/zenika-dev/starter-<squad>.git starter-<squad>
 
 # 2. Assembler le contexte de votre squad
 cd context-nexus && node tools/context-assemble.mjs --squad <squad> --out ../starter-<squad>/.context/brief.md
