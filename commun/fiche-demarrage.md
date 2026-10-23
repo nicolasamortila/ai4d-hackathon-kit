@@ -21,7 +21,7 @@ Toutes les commandes et tous les liens de cette fiche sont **déjà remplis pour
 |---|---|---|
 | Pour qui | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal |
 | Il faut | Un navigateur, un compte GitHub et votre compte Claude | Coller une ligne avant le 23/10, et votre compte Claude |
-| Le jour J | Un lien, 3 clics, prêt en 3 minutes | La même ligne relancée, puis `claude` |
+| Le jour J | Un lien, quelques clics, prêt en 10 minutes environ | La même ligne relancée, puis `claude` |
 
 **Pour tout le monde, avant le 23/10 :**
 - Créez un compte sur [github.com/signup](https://github.com/signup) si vous n'en avez pas, et envoyez votre **identifiant GitHub** au support.
@@ -57,7 +57,8 @@ Vous ne savez pas dans quelle squad vous êtes ? Regardez le tableau de la secti
 4. **Patientez 2 à 4 minutes** : un éditeur s'ouvre dans l'onglet.
 5. Une fenêtre **« Faites-vous confiance aux auteurs des fichiers de ce dossier ? »** s'affiche au milieu de l'écran (« Do you trust the authors… » si votre navigateur est en anglais).
    Cliquez sur le bouton vert **Approuver le dossier et continuer** : c'est votre dépôt de squad, vous pouvez lui faire confiance. Sans cela, le terminal ne se lance pas.
-6. **Patientez encore 1 à 2 minutes** : en bas, le terminal affiche l'installation. C'est prêt quand il écrit **« ✓ Codespace prêt »**.
+6. **Patientez encore 5 à 7 minutes** : en bas, le terminal affiche l'installation des outils. C'est l'étape la plus longue, c'est normal.
+   Ne fermez pas l'onglet et ne tapez rien tant que le terminal n'a pas écrit **« ✓ Codespace prêt »** : c'est ce message qui indique que tout est installé.
 7. **Vérifiez vos fichiers** : dans l'explorateur, à gauche, vous voyez le dépôt de votre squad (`src`, `test`, `CLAUDE.md`…) et, **à la racine, le dossier `context-nexus`** (le contexte partagé).
    Vous pouvez y lire et y copier-coller des fichiers. S'il n'apparaît pas, prévenez le support.
 8. **Connectez Claude à votre compte** (une seule fois) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
