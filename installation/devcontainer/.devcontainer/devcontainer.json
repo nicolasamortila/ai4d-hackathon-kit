@@ -20,6 +20,5 @@
       "extensions": [ "anthropic.claude-code" ]
     }
   },
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
-  "postAttachCommand": "bash .devcontainer/open-workspace.sh"
+  "postCreateCommand": "bash .devcontainer/post-create.sh"
 }
