@@ -6,8 +6,12 @@
 ## Démarrer en 5 étapes
 
 1. **Avant le 23/10** : cette fiche lue, votre chapeau repéré ci-dessous, et votre façon d'être prêt choisie (`commun/03-prerequis-poste.md`) : **Codespace** (un compte GitHub, rien à installer) ou **installation en une ligne** sur votre poste. Deux postes prêts par squad suffisent.
-2. **À 12 h 30** : en Codespace, ouvrir `starter-squad-1-offre` → **Code → Codespaces → … → New with options…**, laisser vides les champs `ANTHROPIC_…`, **Create codespace**, puis `claude auth login` avec votre compte Claude (pas à pas : `commun/fiche-demarrage.md`, voie A) (le clonage et l'étape 3 se font tout seuls). Sur votre poste : cloner côte à côte `context-nexus` et `starter-squad-1-offre` dans `~/hackathon/`, connecter Claude Code à votre compte Claude (`claude auth login`).
-3. **Assembler votre contexte** :
+2. **À 12 h 30** : en Codespace, ouvrir `starter-squad-1-offre` → **Code → Codespaces → … → New with options…**, laisser vides les champs `ANTHROPIC_…`, **Create codespace**, puis `claude auth login` avec votre compte Claude (pas à pas : `commun/fiche-demarrage.md`, voie A) . Sur votre poste : relancer le script d'installation avec votre squad (il clone `context-nexus` et `starter-squad-1-offre` dans `~/hackathon/`) :
+   - Windows : `$env:SQUAD = "squad-1-offre"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex`
+   - macOS : `curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-1-offre`
+
+   puis `claude auth login` avec votre compte Claude.
+3. **Assembler votre contexte** (déjà fait par le Codespace ou par le script ; à relancer au début de chaque bloc) :
    ```bash
    cd ~/hackathon/context-nexus
    node tools/context-assemble.mjs --squad squad-1-offre --out ../starter-squad-1-offre/.context/brief.md
