@@ -1,71 +1,67 @@
 # Fiche de démarrage · Hackathon Champions
 
 **Lundi 26 octobre · 13 h 30 – 17 h 30 · installation dès 12 h 30**
-Votre squad, votre chapeau et vos horaires de gate : votre fiche squad, ci-dessous.
 
-## Vos liens
+## 1. Trouvez votre squad
 
-| Squad | Votre fiche | Ouvrir votre Codespace | Dépôt de la squad | Dossier de la squad dans le contexte |
-|---|---|---|---|---|
-| **1 · Offre** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-1-offre/KIT.md) | [codespaces.new/…/starter-squad-1-offre](https://codespaces.new/zenika-dev/starter-squad-1-offre) | [starter-squad-1-offre](https://github.com/zenika-dev/starter-squad-1-offre) | [teams/squad-1-offre](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-1-offre) |
-| **2 · Prix** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-2-prix/KIT.md) | [codespaces.new/…/starter-squad-2-prix](https://codespaces.new/zenika-dev/starter-squad-2-prix) | [starter-squad-2-prix](https://github.com/zenika-dev/starter-squad-2-prix) | [teams/squad-2-prix](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-2-prix) |
-| **3 · Paiement** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-3-paiement/KIT.md) | [codespaces.new/…/starter-squad-3-paiement](https://codespaces.new/zenika-dev/starter-squad-3-paiement) | [starter-squad-3-paiement](https://github.com/zenika-dev/starter-squad-3-paiement) | [teams/squad-3-paiement](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-3-paiement) |
-| **4 · Expérience** | [KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-4-experience/KIT.md) | [codespaces.new/…/starter-squad-4-experience](https://codespaces.new/zenika-dev/starter-squad-4-experience) | [starter-squad-4-experience](https://github.com/zenika-dev/starter-squad-4-experience) | [teams/squad-4-experience](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-4-experience) |
+Toutes les commandes et tous les liens de cette fiche sont **déjà remplis pour chaque squad** : copiez ceux de votre section, sans rien modifier.
 
-Contexte partagé (les 4 squads) : [github.com/zenika-dev/ai4d-hackathon-context-nexus](https://github.com/zenika-dev/ai4d-hackathon-context-nexus) ·
-Kit complet : [github.com/zenika-dev/ai4d-hackathon-kit](https://github.com/zenika-dev/ai4d-hackathon-kit)
+| Squad | Volet | Membres | Votre section |
+|---|---|---|---|
+| **1 · Offre** | API d'éligibilité et de prix | PO, TL, SA iOS, Data analyst | [→ Squad 1 · Offre](#squad-1) |
+| **2 · Prix** | Plancher, plafond et KPI | PO, TL BFF, SA AEM, Sr Data Eng. | [→ Squad 2 · Prix](#squad-2) |
+| **3 · Paiement** | Encaissement du supplément | PO, TL, SA Android, Scrum Master | [→ Squad 3 · Paiement](#squad-3) |
+| **4 · Expérience** | Tuile et carte dans l'app | Designer, SA BFF, SA Web JS, Dev Android | [→ Squad 4 · Expérience](#squad-4) |
 
-> Les dépôts de squad (`starter-…`) et donc les liens Codespace seront actifs au plus tard le lundi 26/10 à 12 h 30.
+## 2. Choisissez votre voie
 
-**Deux postes prêts par squad suffisent.** Choisissez votre voie :
+**Deux postes prêts par squad suffisent.**
 
 | | Voie A · Codespace | Voie B · votre poste |
 |---|---|---|
 | Pour qui | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal |
-| Il faut | Un navigateur, un compte GitHub et votre compte Claude | Lancer un script d'installation avant le 23/10, et votre compte Claude |
-| Le jour J | 3 clics, tout est prêt en 3 minutes | La même ligne relancée, puis `claude` |
+| Il faut | Un navigateur, un compte GitHub et votre compte Claude | Coller une ligne avant le 23/10, et votre compte Claude |
+| Le jour J | Un lien, 3 clics, prêt en 3 minutes | La même ligne relancée, puis `claude` |
 
----
+**Pour tout le monde, avant le 23/10 :**
+1. Créez un compte sur [github.com/signup](https://github.com/signup) si vous n'en avez pas, et envoyez votre **identifiant GitHub** au support.
+2. Vérifiez que vous pouvez vous connecter à [claude.ai](https://claude.ai) avec votre **compte Claude** (abonnement fourni par l'entreprise).
 
-## Voie A · Codespace : rien à installer
+## 3. Voie A · Codespace, pas à pas
 
-Un Codespace est un ordinateur prêt à l'emploi qui s'ouvre **dans votre navigateur**. Tout y est déjà installé :
+Un Codespace est un ordinateur prêt à l'emploi qui s'ouvre **dans votre navigateur**. Tout y est installé :
 l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad et le contexte partagé.
 
-### Avant le 23/10 (5 minutes)
-
-1. Créez un compte sur [github.com/signup](https://github.com/signup) si vous n'en avez pas (adresse pro conseillée).
-2. Envoyez votre **identifiant GitHub** au support : il vous donnera accès au contexte partagé.
-3. Vérifiez que vous pouvez vous connecter à [claude.ai](https://claude.ai) avec votre **compte Claude** (l'abonnement fourni par l'entreprise).
-
-### Le jour J, à 12 h 30
-
-1. **Connectez-vous à GitHub**, puis cliquez sur le lien **« Ouvrir votre Codespace »** de votre squad (tableau « Vos liens »).
-2. La page « Create a new codespace » s'affiche. *Autre chemin, si le lien ne marche pas : ouvrez le dépôt de votre squad,
-   bouton vert **Code** → onglet **Codespaces** → **…** → **New with options…**.*
-3. La page propose des champs `ANTHROPIC_…` : **laissez-les tous vides**. Vous vous connecterez avec votre compte Claude à l'étape 5,
-   pas avec une clé. Cliquez sur **Create codespace**.
-4. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre dans l'onglet ; en bas, un terminal affiche l'installation.
-   C'est prêt quand il écrit **« ✓ Codespace prêt »**.
-5. **Connectez Claude à votre compte** (une seule fois par Codespace) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
-   - Un lien s'affiche : ouvrez-le (Ctrl + clic, ou Cmd + clic sur Mac) et connectez-vous à Claude avec votre compte habituel, puis cliquez sur **Autoriser**.
-   - Si la page affiche un **code**, copiez-le, revenez dans le terminal, collez-le et appuyez sur Entrée.
-   - Pour vérifier : `claude auth status --text` doit afficher votre adresse e-mail.
-
-   Puis **parlez à l'agent** : cliquez sur l'icône Claude dans la barre de gauche (ou tapez `claude` dans le terminal).
-6. **Vérifiez** en lui écrivant :
+1. Connectez-vous à GitHub, puis cliquez sur le lien **« Ouvrir mon Codespace »** de **votre section**.
+2. La page « Create a new codespace » s'affiche. Les champs `ANTHROPIC_…` : **laissez-les tous vides**. Cliquez sur **Create codespace**.
+3. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre ; en bas, un terminal affiche l'installation. C'est prêt quand il écrit **« ✓ Codespace prêt »**.
+4. **Connectez Claude à votre compte** (une seule fois) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
+   - Un lien s'affiche : ouvrez-le (Ctrl + clic, ou Cmd + clic sur Mac), connectez-vous avec votre compte Claude habituel, cliquez sur **Autoriser**.
+   - Si la page affiche un **code**, copiez-le, revenez dans le terminal, collez-le, Entrée.
+5. **Parlez à l'agent** : icône Claude dans la barre de gauche. Écrivez-lui :
    > Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons.
 
    S'il cite votre volet et les contrats des autres squads, vous êtes prêt.
 
-### Travailler avec Claude dans le Codespace
+**Bon à savoir**
+- Onglet fermé ? Votre Codespace vous attend sur [github.com/codespaces](https://github.com/codespaces). Ne recliquez **pas** sur « Ouvrir mon Codespace » : cela en créerait un deuxième, sans votre travail non publié.
+- Après 30 minutes sans activité, il se met en veille ; rouvrez-le, il redémarre en quelques secondes, toujours connecté.
+- Le Codespace est **personnel** (connecté à votre compte Claude) : ne le partagez pas.
 
-**Où lui parler** : le panneau Claude (icône dans la barre de gauche). On lui écrit en français, comme dans une messagerie.
-Il lit les fichiers, propose des modifications et vous demande votre accord avant de les appliquer : lisez, puis acceptez ou refusez.
+## 4. Voie B · votre poste
 
-**Les commandes Spec Kit** se tapent dans le même panneau : `/speckit.specify`, `/speckit.clarify`… (le mode opératoire indique laquelle à quel moment).
+La ligne de **votre section** installe Git, Node.js, Claude Code et Spec Kit (sans droits administrateur), clone le contexte partagé
+et le dépôt de votre squad dans le dossier `hackathon` de votre profil, assemble le contexte de la squad, puis affiche un bilan.
 
-**Des phrases toutes faites**, que l'agent sait exécuter pour vous, sans que vous touchiez au terminal :
+- **Avant le 23/10** : lancez-la une fois. Le bilan doit être vert, **sauf la ligne « starter »** : le dépôt de votre squad n'ouvre que le jour J.
+  Une autre ligne rouge ? Envoyez le bilan au support avant le 23/10.
+- **Le jour J, à 12 h 30** : relancez **la même ligne**, puis les trois commandes « Le jour J » de votre section.
+- Windows : collez la ligne dans **PowerShell** (menu Démarrer, tapez « PowerShell »). macOS : dans **Terminal** (Cmd + Espace, tapez « Terminal »).
+
+## 5. Travailler avec Claude (les deux voies)
+
+On parle à Claude en français, dans le panneau Claude (ou en tapant `claude` dans le terminal). Il propose ses modifications et attend votre accord.
+Les commandes Spec Kit (`/speckit.specify`, `/speckit.clarify`…) se tapent au même endroit.
 
 | Vous voulez | Écrivez à Claude |
 |---|---|
@@ -75,71 +71,243 @@ Il lit les fichiers, propose des modifications et vous demande votre accord avan
 | Partager votre travail | « Publie mes changements dans le Context Nexus. » |
 | Vérifier avant une gate | « Vérifie que notre squad passe le check de context-assemble. » |
 
-**Une règle d'équipe** : chaque Codespace est une copie séparée. Ce que vous écrivez reste invisible pour les autres tant que ce n'est pas **publié**.
-- La spec et le code vivent dans **un seul Codespace, celui de l'Orchestrator**, affiché sur l'écran de la table.
-- Dans votre Codespace, vous lisez le contexte et vous préparez vos textes (Business Intent, spec, contrat), puis vous demandez à Claude de les **publier**.
+**Règle d'équipe** : chaque poste et chaque Codespace est une copie séparée. Ce qui n'est pas **publié** reste invisible pour les autres.
+La spec et le code vivent sur le **poste pilote** de l'Orchestrator, affiché sur l'écran de la table.
 
-### Bon à savoir
-
-- Les fichiers sont à gauche : votre dépôt de squad, et le contexte partagé dans le dossier `context-nexus` à côté.
-- Vous avez fermé l'onglet ? Retrouvez votre Codespace sur [github.com/codespaces](https://github.com/codespaces). Rien n'est perdu.
-  Ne recliquez pas sur le lien « Ouvrir votre Codespace » : il en créerait un deuxième, vide de votre travail non publié.
-- Après 30 minutes sans activité, le Codespace se met en veille : rouvrez-le, il redémarre en quelques secondes, toujours connecté à votre compte Claude.
-- Claude vous demande de vous connecter ? Relancez `claude auth login`. Le Codespace est **personnel** : ne le partagez pas, il est connecté à votre compte.
-- Le terminal ne vous parle pas ? Vous n'en avez pas besoin : le Context Engineer de la squad lance les commandes. Vous travaillez avec l'agent.
+Bloqué plus de 5 minutes ? Levez la main.
 
 ---
 
-## Voie B · votre poste
+<a id="squad-1"></a>
 
-Une ligne à coller, sans droits administrateur, **avec le nom de votre squad** (voir « Vos liens »). Elle installe Git, Node.js,
-Claude Code et Spec Kit, clone le contexte partagé et le dépôt de votre squad dans le dossier `hackathon` de votre profil,
-assemble le contexte de la squad, puis affiche un bilan.
+## Squad 1 · Offre
 
+**API d'éligibilité et de prix** · PO, TL, SA iOS, Data analyst
+Poste pilote : **SA iOS** (Orchestrator) · Context Engineer : **Data analyst** · Gates : G1 14h25 · G2 15h10 · G3 16h10 · G4 16h35
+
+| | |
+|---|---|
+| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-1-offre](https://codespaces.new/zenika-dev/starter-squad-1-offre) |
+| Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-1-offre/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-1-offre/KIT.md) |
+| Dépôt de la squad | [github.com/zenika-dev/starter-squad-1-offre](https://github.com/zenika-dev/starter-squad-1-offre) |
+| Notre dossier dans le contexte partagé | [teams/squad-1-offre](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-1-offre) |
+
+**Voie B · la ligne à coller** (avant le 23/10, puis à nouveau le jour J)
+
+Windows, dans PowerShell :
 ```powershell
-# Windows : dans PowerShell (menu Démarrer, tapez « PowerShell »), en remplaçant squad-2-prix par votre squad
-$env:SQUAD = "squad-2-prix"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+$env:SQUAD = "squad-1-offre"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
 ```
 
+macOS, dans Terminal :
 ```bash
-# macOS : dans Terminal (Cmd + Espace, tapez « Terminal »), en remplaçant squad-2-prix par votre squad
-curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-2-prix
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-1-offre
 ```
 
-**Avant le 23/10** : lancez-la une première fois. Le bilan doit être vert, sauf la ligne « starter » : le dépôt de votre squad
-n'est ouvert que le jour J. Une autre ligne rouge : envoyez le bilan au support **avant** le 23/10.
+**Voie B · le jour J, après la ligne**
 
-**Le jour J, à 12 h 30** : relancez **la même ligne**. Elle récupère le dépôt de votre squad et met tout à jour. Puis :
-
-```bash
-cd ~/hackathon/starter-<squad>
-claude auth login      # connexion avec votre compte Claude (abonnement), une seule fois
+Windows, dans PowerShell :
+```powershell
+cd $HOME\hackathon\starter-squad-1-offre
+claude auth login
 claude
 ```
 
-Vérifiez avec la même question qu'en voie A (étape 6), et tapez `/speckit` : les commandes doivent apparaître.
+macOS, dans Terminal :
+```bash
+cd ~/hackathon/starter-squad-1-offre
+claude auth login
+claude
+```
 
-<details><summary>Sans le script : les commandes à la main</summary>
+**Réflexes du Context Engineer (Data analyst)**, à taper dans le dossier de la squad (là où l'on lance `claude`), dans les deux voies.
+Ou plus simple : demandez-le à Claude avec les phrases de la section 5.
 
 ```bash
-mkdir -p ~/hackathon && cd ~/hackathon
-git clone https://github.com/zenika-dev/ai4d-hackathon-context-nexus.git context-nexus
-git clone https://github.com/zenika-dev/starter-<squad>.git starter-<squad>
-cd context-nexus && node tools/context-assemble.mjs --squad <squad> --out ../starter-<squad>/.context/brief.md
-cd ../starter-<squad> && npm install
-```
-</details>
+# Début de chaque bloc : contexte à jour
+git -C ../context-nexus pull
+node ../context-nexus/tools/context-assemble.mjs --squad squad-1-offre --out .context/brief.md
 
-`<squad>` : `squad-1-offre`, `squad-2-prix`, `squad-3-paiement` ou `squad-4-experience`.
+# Avant chaque gate (code retour 1 = quelque chose est « stale »)
+node ../context-nexus/tools/context-assemble.mjs --squad squad-1-offre --check
+
+# Annonce « un contrat a changé »
+node ../context-nexus/tools/context-assemble.mjs --squad squad-1-offre --mark-stale --out .context/brief.md
+```
 
 ---
 
-## Trois réflexes pendant la session (Context Engineer, dans les deux voies)
+<a id="squad-2"></a>
 
-À taper dans le terminal, depuis le dossier de votre squad :
+## Squad 2 · Prix
 
-1. **Début de chaque bloc** : `cd ../context-nexus && git pull && node tools/context-assemble.mjs --squad <squad> --out ../starter-<squad>/.context/brief.md && cd -`
-2. **Avant chaque gate** : `node ../context-nexus/tools/context-assemble.mjs --squad <squad> --check`
-3. **« Un contrat a changé »** : la même commande avec `--mark-stale`, puis lire le changement, mettre à jour, ré-épingler, republier.
+**Plancher, plafond et KPI** · PO, TL BFF, SA AEM, Sr Data Eng.
+Poste pilote : **SA AEM** (Orchestrator) · Context Engineer : **Sr Data Eng.** · Gates : G1 14h30 · G2 15h15 · G3 16h15 · G4 16h40
 
-Bloqué plus de 5 minutes ? Levez la main.
+| | |
+|---|---|
+| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-2-prix](https://codespaces.new/zenika-dev/starter-squad-2-prix) |
+| Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-2-prix/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-2-prix/KIT.md) |
+| Dépôt de la squad | [github.com/zenika-dev/starter-squad-2-prix](https://github.com/zenika-dev/starter-squad-2-prix) |
+| Notre dossier dans le contexte partagé | [teams/squad-2-prix](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-2-prix) |
+
+**Voie B · la ligne à coller** (avant le 23/10, puis à nouveau le jour J)
+
+Windows, dans PowerShell :
+```powershell
+$env:SQUAD = "squad-2-prix"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+```
+
+macOS, dans Terminal :
+```bash
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-2-prix
+```
+
+**Voie B · le jour J, après la ligne**
+
+Windows, dans PowerShell :
+```powershell
+cd $HOME\hackathon\starter-squad-2-prix
+claude auth login
+claude
+```
+
+macOS, dans Terminal :
+```bash
+cd ~/hackathon/starter-squad-2-prix
+claude auth login
+claude
+```
+
+**Réflexes du Context Engineer (Sr Data Eng.)**, à taper dans le dossier de la squad (là où l'on lance `claude`), dans les deux voies.
+Ou plus simple : demandez-le à Claude avec les phrases de la section 5.
+
+```bash
+# Début de chaque bloc : contexte à jour
+git -C ../context-nexus pull
+node ../context-nexus/tools/context-assemble.mjs --squad squad-2-prix --out .context/brief.md
+
+# Avant chaque gate (code retour 1 = quelque chose est « stale »)
+node ../context-nexus/tools/context-assemble.mjs --squad squad-2-prix --check
+
+# Annonce « un contrat a changé »
+node ../context-nexus/tools/context-assemble.mjs --squad squad-2-prix --mark-stale --out .context/brief.md
+```
+
+---
+
+<a id="squad-3"></a>
+
+## Squad 3 · Paiement
+
+**Encaissement du supplément** · PO, TL, SA Android, Scrum Master
+Poste pilote : **SA Android** (Orchestrator) · Context Engineer : **Scrum Master** · Gates : G1 14h35 · G2 15h20 · G3 16h20 · G4 16h45
+
+| | |
+|---|---|
+| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-3-paiement](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
+| Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-3-paiement/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-3-paiement/KIT.md) |
+| Dépôt de la squad | [github.com/zenika-dev/starter-squad-3-paiement](https://github.com/zenika-dev/starter-squad-3-paiement) |
+| Notre dossier dans le contexte partagé | [teams/squad-3-paiement](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-3-paiement) |
+
+**Voie B · la ligne à coller** (avant le 23/10, puis à nouveau le jour J)
+
+Windows, dans PowerShell :
+```powershell
+$env:SQUAD = "squad-3-paiement"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+```
+
+macOS, dans Terminal :
+```bash
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-3-paiement
+```
+
+**Voie B · le jour J, après la ligne**
+
+Windows, dans PowerShell :
+```powershell
+cd $HOME\hackathon\starter-squad-3-paiement
+claude auth login
+claude
+```
+
+macOS, dans Terminal :
+```bash
+cd ~/hackathon/starter-squad-3-paiement
+claude auth login
+claude
+```
+
+**Réflexes du Context Engineer (Scrum Master)**, à taper dans le dossier de la squad (là où l'on lance `claude`), dans les deux voies.
+Ou plus simple : demandez-le à Claude avec les phrases de la section 5.
+
+```bash
+# Début de chaque bloc : contexte à jour
+git -C ../context-nexus pull
+node ../context-nexus/tools/context-assemble.mjs --squad squad-3-paiement --out .context/brief.md
+
+# Avant chaque gate (code retour 1 = quelque chose est « stale »)
+node ../context-nexus/tools/context-assemble.mjs --squad squad-3-paiement --check
+
+# Annonce « un contrat a changé »
+node ../context-nexus/tools/context-assemble.mjs --squad squad-3-paiement --mark-stale --out .context/brief.md
+```
+
+---
+
+<a id="squad-4"></a>
+
+## Squad 4 · Expérience
+
+**Tuile et carte dans l'app** · Designer, SA BFF, SA Web JS, Dev Android
+Poste pilote : **Dev Android** (Orchestrator) · Context Engineer : **SA Web JS** · Gates : G1 14h40 · G2 15h25 · G3 16h25 · G4 16h50
+
+| | |
+|---|---|
+| **Ouvrir mon Codespace** (voie A) | [codespaces.new/zenika-dev/starter-squad-4-experience](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
+| Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-4-experience/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-4-experience/KIT.md) |
+| Dépôt de la squad | [github.com/zenika-dev/starter-squad-4-experience](https://github.com/zenika-dev/starter-squad-4-experience) |
+| Notre dossier dans le contexte partagé | [teams/squad-4-experience](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-4-experience) |
+
+**Voie B · la ligne à coller** (avant le 23/10, puis à nouveau le jour J)
+
+Windows, dans PowerShell :
+```powershell
+$env:SQUAD = "squad-4-experience"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex
+```
+
+macOS, dans Terminal :
+```bash
+curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- squad-4-experience
+```
+
+**Voie B · le jour J, après la ligne**
+
+Windows, dans PowerShell :
+```powershell
+cd $HOME\hackathon\starter-squad-4-experience
+claude auth login
+claude
+```
+
+macOS, dans Terminal :
+```bash
+cd ~/hackathon/starter-squad-4-experience
+claude auth login
+claude
+```
+
+**Réflexes du Context Engineer (SA Web JS)**, à taper dans le dossier de la squad (là où l'on lance `claude`), dans les deux voies.
+Ou plus simple : demandez-le à Claude avec les phrases de la section 5.
+
+```bash
+# Début de chaque bloc : contexte à jour
+git -C ../context-nexus pull
+node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --out .context/brief.md
+
+# Avant chaque gate (code retour 1 = quelque chose est « stale »)
+node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --check
+
+# Annonce « un contrat a changé »
+node ../context-nexus/tools/context-assemble.mjs --squad squad-4-experience --mark-stale --out .context/brief.md
+```
