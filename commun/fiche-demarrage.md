@@ -17,11 +17,11 @@ Toutes les commandes et tous les liens de cette fiche sont **déjà remplis pour
 
 **Deux postes prêts par squad suffisent.** Cliquez sur le nom de la voie pour aller directement à son pas à pas.
 
-| | [Voie A · Codespace](#voie-a) ⭐ **recommandée** | [Voie B · votre poste](#voie-b) |
-|---|---|---|
-| Pour qui | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal |
-| Il faut | Un navigateur, un compte GitHub et votre compte Claude | Coller une ligne avant le 23/10, et votre compte Claude |
-| Le jour J | Un lien, 3 clics, prêt en 3 minutes | La même ligne relancée, puis `claude` |
+|           | [Voie A · Codespace](#voie-a) ⭐ **recommandée**                     | [Voie B · votre poste](#voie-b)                         |
+| --------- | ------------------------------------------------------------------- | ------------------------------------------------------- |
+| Pour qui  | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal                     |
+| Il faut   | Un navigateur, un compte GitHub et votre compte Claude              | Coller une ligne avant le 23/10, et votre compte Claude |
+| Le jour J | Un lien, quelques clics, prêt en 10 minutes environ                 | La même ligne relancée, puis `claude`                   |
 
 **Pour tout le monde, avant le 23/10 :**
 - Créez un compte sur [github.com/signup](https://github.com/signup) si vous n'en avez pas, et envoyez votre **identifiant GitHub** au support.
@@ -41,27 +41,30 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
 
 | Votre squad | Cliquez ici pour ouvrir votre Codespace |
 |---|---|
-| **1 · Offre** | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre/tree/devcontainer/squad-1-offre) |
-| **2 · Prix** | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix/tree/devcontainer/squad-2-prix) |
-| **3 · Paiement** | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement/tree/devcontainer/squad-3-paiement) |
-| **4 · Expérience** | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience/tree/devcontainer/squad-4-experience) |
+| **1 · Offre** | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre) |
+| **2 · Prix** | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix) |
+| **3 · Paiement** | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
+| **4 · Expérience** | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
 
 Vous ne savez pas dans quelle squad vous êtes ? Regardez le tableau de la section 1, ou demandez au support.
 
 1. **Cliquez sur le lien de votre squad**, dans le tableau ci-dessus.
 2. La page « Create codespace » s'affiche, avec un cadre de trois réglages : **Branch** (`main`), **Region** et **Machine type**. **Ne changez rien.**
-   Aucune clé n'est demandée : vous vous connecterez avec votre compte Claude à l'étape 7.
+   Aucune clé n'est demandée : vous vous connecterez avec votre compte Claude à l'étape 8.
    Cliquez sur le bouton vert **Create codespace**, en bas à droite du cadre.
 3. Une page **« This codespace is requesting additional permissions »** s'affiche : GitHub demande l'accès au contexte partagé (`zenika-dev/ai4d-hackathon-context-nexus`), pour que vous puissiez y publier votre travail.
    Cliquez sur le bouton vert **Authorize and continue**. (Évitez « Continue without authorizing » : vous ne pourriez pas publier dans le contexte partagé.)
 4. **Patientez 2 à 4 minutes** : un éditeur s'ouvre dans l'onglet.
 5. Une fenêtre **« Faites-vous confiance aux auteurs des fichiers de ce dossier ? »** s'affiche au milieu de l'écran (« Do you trust the authors… » si votre navigateur est en anglais).
    Cliquez sur le bouton vert **Approuver le dossier et continuer** : c'est votre dépôt de squad, vous pouvez lui faire confiance. Sans cela, le terminal ne se lance pas.
-6. **Patientez encore 1 à 2 minutes** : en bas, le terminal affiche l'installation. C'est prêt quand il écrit **« ✓ Codespace prêt »**.
-7. **Connectez Claude à votre compte** (une seule fois) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
+6. **Patientez encore 5 à 7 minutes** : en bas, le terminal affiche l'installation des outils. C'est l'étape la plus longue, c'est normal.
+   Ne fermez pas l'onglet et ne tapez rien tant que le terminal n'a pas écrit **« ✓ Codespace prêt »** : c'est ce message qui indique que tout est installé.
+7. **Vérifiez vos fichiers** : dans l'explorateur, à gauche, vous voyez le dépôt de votre squad (`src`, `test`, `CLAUDE.md`…) et, **à la racine, le dossier `context-nexus`** (le contexte partagé).
+   Vous pouvez y lire et y copier-coller des fichiers. S'il n'apparaît pas, prévenez le support.
+8. **Connectez Claude à votre compte** (une seule fois) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
    - Un lien s'affiche : ouvrez-le (Ctrl + clic, ou Cmd + clic sur Mac), connectez-vous avec votre compte Claude habituel, cliquez sur **Autoriser**.
    - Si la page affiche un **code**, copiez-le, revenez dans le terminal, collez-le, Entrée.
-8. **Parlez à l'agent** : icône Claude dans la barre de gauche. Écrivez-lui :
+9. **Parlez à l'agent** : icône Claude dans la barre de gauche. Écrivez-lui :
    > Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons.
 
    S'il cite votre volet et les contrats des autres squads, vous êtes prêt.
@@ -111,7 +114,7 @@ Poste pilote : **SA iOS** (Orchestrator) · Context Engineer : **Data analyst** 
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre/tree/devcontainer/squad-1-offre) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 1](https://codespaces.new/zenika-dev/starter-squad-1-offre) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-1-offre/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-1-offre/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-1-offre](https://github.com/zenika-dev/starter-squad-1-offre) |
 | Notre dossier dans le contexte partagé | [teams/squad-1-offre](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-1-offre) |
@@ -170,7 +173,7 @@ Poste pilote : **SA AEM** (Orchestrator) · Context Engineer : **Sr Data Eng.** 
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix/tree/devcontainer/squad-2-prix) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 2](https://codespaces.new/zenika-dev/starter-squad-2-prix) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-2-prix/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-2-prix/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-2-prix](https://github.com/zenika-dev/starter-squad-2-prix) |
 | Notre dossier dans le contexte partagé | [teams/squad-2-prix](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-2-prix) |
@@ -229,7 +232,7 @@ Poste pilote : **SA Android** (Orchestrator) · Context Engineer : **Scrum Maste
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement/tree/devcontainer/squad-3-paiement) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 3](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-3-paiement/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-3-paiement/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-3-paiement](https://github.com/zenika-dev/starter-squad-3-paiement) |
 | Notre dossier dans le contexte partagé | [teams/squad-3-paiement](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-3-paiement) |
@@ -288,7 +291,7 @@ Poste pilote : **Dev Android** (Orchestrator) · Context Engineer : **SA Web JS*
 
 | | |
 |---|---|
-| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience/tree/devcontainer/squad-4-experience) |
+| **Ouvrir mon Codespace** (voie A) | [Ouvrir le Codespace de la squad 4](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
 | Ma fiche squad (mission, chapeaux, agenda, gates) | [squads/squad-4-experience/KIT.md](https://github.com/zenika-dev/ai4d-hackathon-kit/blob/main/squads/squad-4-experience/KIT.md) |
 | Dépôt de la squad | [github.com/zenika-dev/starter-squad-4-experience](https://github.com/zenika-dev/starter-squad-4-experience) |
 | Notre dossier dans le contexte partagé | [teams/squad-4-experience](https://github.com/zenika-dev/ai4d-hackathon-context-nexus/tree/main/teams/squad-4-experience) |

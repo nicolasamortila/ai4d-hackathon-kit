@@ -1,55 +1,60 @@
 # Par où commencer · le pas à pas du champion
 
 > Trois moments : **avant** (10 min, d'ici le 23/10), **à l'arrivée** (12 h 30 – 13 h 30), **la première heure** (13 h 30 – 14 h 30).
-> Si vous ne lisez qu'un document, lisez celui-ci, puis la fiche `KIT.md` de votre squad.
+> Pour être prêt, suivez la **fiche de démarrage** (`fiche-demarrage.md`) : elle contient les liens et les commandes de votre squad.
+> Ce document explique la suite : quoi vérifier à l'arrivée, puis comment démarrer la première heure.
+> Lisez aussi la fiche de votre squad : `squads/<votre-squad>/KIT.md`.
 
 ## Avant · d'ici le vendredi 23/10 (10 minutes)
 
 1. Lire `01-bases-en-5-minutes.md` et la fiche de votre squad : `squads/<votre-squad>/KIT.md`.
-2. Choisir votre façon d'être prêt (détails dans `03-prerequis-poste.md`) :
-   - **Profil non technique** : créez un compte GitHub et envoyez votre identifiant au support. Le jour J, vous ouvrirez un **Codespace** : rien à installer.
-   - **Installation sur votre poste** : une ligne à coller (PowerShell sous Windows, Terminal sous macOS), sans droits administrateur.
-     Le script se termine par un bilan, qui doit être tout vert.
-3. **Deux postes prêts par squad suffisent** (Orchestrator et Decision Guarantor). Les autres peuvent travailler en binôme.
-4. Une ligne rouge au bilan ? Envoyez-le au support **avant** le 23/10, pas le jour J.
+2. Vérifier que vous pouvez vous connecter à [claude.ai](https://claude.ai) avec votre **compte Claude** : Claude Code s'y connecte avec `claude auth login`, sans clé API.
+3. Choisir votre voie (détails dans `fiche-demarrage.md` et `03-prerequis-poste.md`) :
+   - **Voie A · Codespace** (recommandée, rien à installer) : créez un compte GitHub et envoyez votre identifiant au support. Le jour J, vous cliquerez sur le lien Codespace de votre squad.
+   - **Voie B · votre poste** : collez la ligne d'installation de votre squad (PowerShell sous Windows, Terminal sous macOS), sans droits administrateur.
+     Le script se termine par un bilan, qui doit être **tout vert**. Une ligne rouge ? Envoyez-le au support **avant** le 23/10, pas le jour J.
+4. **Deux postes prêts par squad suffisent** (Orchestrator et Decision Guarantor). Les autres peuvent travailler en binôme.
 
 ## À l'arrivée · lundi 26/10, à partir de 12 h 30
 
-À votre table de squad, un seul poste suffit pour les étapes 1 à 4 ; les autres suivent sur leur propre poste.
+À votre table de squad, un seul poste suffit pour les étapes 1 à 3 ; les autres suivent sur leur propre poste.
 
-> **En Codespace** : cliquez sur le **lien Codespace de votre squad** (fiche de démarrage, voie A),
-> puis connectez-vous avec `claude auth login`. Les étapes 1 à 4 se font toutes seules ;
-> passez directement à l'étape 5. Pas à pas détaillé : `fiche-demarrage.md`, voie A.
+**Une convention pour tout ce document** : les commandes se lancent **depuis le dossier du starter** de votre squad, là où l'on lance `claude`.
+Le contexte partagé est à côté, accessible par `../context-nexus` (dans un Codespace, il est aussi à la racine du projet, dans `context-nexus/`).
 
-**1. Récupérer les deux dépôts, côte à côte**
-```bash
-mkdir -p ~/hackathon && cd ~/hackathon
-git clone https://github.com/Zenika-dev/ai4d-hackathon-context-nexus.git context-nexus
-git clone <url-du-starter-de-votre-squad> starter-<votre-squad>
-```
-> L'URL du starter de votre squad est affichée sur l'écran commun et sur le mur de squad.
+**1. Ouvrir votre environnement**
+
+- **Voie A · Codespace** : cliquez sur le lien Codespace de votre squad (`fiche-demarrage.md`, voie A). Comptez environ **10 minutes**, avec deux fenêtres à valider
+  (permissions, confiance du dossier). C'est prêt quand le terminal écrit **« ✓ Codespace prêt »** : le dépôt de la squad et le dossier `context-nexus` sont alors là, et le contexte est déjà assemblé.
+- **Voie B · votre poste** : relancez **la même ligne** que pour l'installation (elle met tout à jour, clone le contexte partagé et le starter dans `~/hackathon/`, puis assemble le contexte).
+  Puis, dans un **nouveau** terminal : `cd ~/hackathon/starter-<votre-squad>`.
+
+> Voie B sans le nom de la squad, ou starter absent ? Clonez à la main :
+> ```bash
+> mkdir -p ~/hackathon && cd ~/hackathon
+> git clone https://github.com/zenika-dev/ai4d-hackathon-context-nexus.git context-nexus
+> git clone https://github.com/zenika-dev/starter-<votre-squad>.git starter-<votre-squad>
+> cd starter-<votre-squad> && node ../context-nexus/tools/context-assemble.mjs --squad <votre-squad> --out .context/brief.md
+> ```
 
 **2. Connecter Claude Code à votre compte Claude** : `claude auth login`, puis connexion dans le navigateur. Vérification : `claude auth status --text`.
 
-**3. Assembler le contexte de votre squad**
+**3. Vérifier le starter**
 ```bash
-cd ~/hackathon/context-nexus
-node tools/context-assemble.mjs --squad <votre-squad> --out ../starter-<votre-squad>/.context/brief.md
-```
-Attendu : un bloc `task_brief:` avec un identifiant `TB-<squad>-xxxxxxxx`, puis
-`✓ Toutes les dépendances épinglées sont à jour.`
-
-**4. Vérifier le starter**
-```bash
-cd ~/hackathon/starter-<votre-squad>
 ls CLAUDE.md .context/brief.md        # les deux doivent exister
-npm install && npm test               # tests verts
+npm test                              # tests verts (npm install est déjà fait)
 specify check
 ```
-> Pas de `CLAUDE.md` ? Copiez celui de `squads/<votre-squad>/CLAUDE.md` à la racine du starter.
+Le fichier `.context/brief.md` doit contenir un bloc `task_brief:` avec un identifiant `TB-<squad>-xxxxxxxx`. Pour le régénérer et vérifier les dépendances :
+```bash
+node ../context-nexus/tools/context-assemble.mjs --squad <votre-squad> --out .context/brief.md
+```
+Attendu : `✓ Toutes les dépendances épinglées sont à jour.`
+
+> Pas de `CLAUDE.md` ? Copiez celui de `squads/<votre-squad>/CLAUDE.md` du kit à la racine du starter.
 > Pas de dossier `.specify/` ? Lancez `specify init --here --integration claude`.
 
-**5. Premier contact avec l'agent**
+**4. Premier contact avec l'agent**
 ```bash
 claude
 ```
@@ -79,9 +84,9 @@ Tapez aussi `/speckit` : les commandes `/speckit-constitution` à `/speckit-impl
 | **Orchestrator** | Fait travailler l'agent sur les questions ouvertes (prompt ci-dessous) |
 | **Decision Guarantor** | Fait trancher le critère de succès chiffré et la priorité, prépare le passage de G1 |
 
+Copier le gabarit de la Business Intent Spec (depuis le dossier du starter) :
 ```bash
-cd ~/hackathon/context-nexus
-cp gabarits/business-intent.md teams/<votre-squad>/intent/business-intent.md
+cp ../context-nexus/gabarits/business-intent.md ../context-nexus/teams/<votre-squad>/intent/business-intent.md
 ```
 
 Prompt de départ (dans Claude Code, depuis le starter) :
@@ -91,14 +96,15 @@ pour notre volet. Pour chaque point, dis quelle donnée ou quelle squad pourrait
 Ne rédige pas la Business Intent Spec : pose les questions.
 ```
 
-Avant votre créneau G1, **publiez** la Business Intent Spec :
+Avant votre créneau G1, **publiez** la Business Intent Spec (depuis le dossier du starter) :
 ```bash
-cd ~/hackathon/context-nexus
-# frontmatter : status: active, owner: <prénom.nom>, last-validated: 2026-10-26
-git add teams/<votre-squad> && git commit -m "<votre-squad>: publie business-intent v1.0.0"
-git pull --rebase && git push
-node tools/context-assemble.mjs --squad <votre-squad> --check
+# frontmatter du fichier : status: active, owner: <prénom.nom>, last-validated: 2026-10-26
+git -C ../context-nexus add teams/<votre-squad>
+git -C ../context-nexus commit -m "<votre-squad>: publie business-intent v1.0.0"
+git -C ../context-nexus pull --rebase && git -C ../context-nexus push
+node ../context-nexus/tools/context-assemble.mjs --squad <votre-squad> --check
 ```
+> Plus simple : demandez-le à Claude, « Publie mes changements dans le Context Nexus. » (phrases prêtes dans `fiche-demarrage.md`, section 3).
 
 ### À partir de 1:00 · Design → G2
 
@@ -107,16 +113,21 @@ puis publier le contrat v1. Tout est détaillé, avec les prompts, dans `02-spec
 
 ## Les trois réflexes pour toute la session
 
-1. **Début de bloc** : `git pull` puis `context-assemble` (Context Engineer).
+1. **Début de bloc** : `git -C ../context-nexus pull` puis `context-assemble` (Context Engineer).
 2. **Avant chaque gate** : gate-check, puis `context-assemble --check`. Code retour 1 = quelque chose est `stale`.
 3. **Annonce « un contrat a changé »** : `context-assemble --mark-stale`, lire le diff, mettre à jour, ré-épingler, republier.
+
+Les commandes exactes de votre squad sont dans la section de votre squad de `fiche-demarrage.md`.
 
 ## En cas de problème
 
 | Symptôme | Réflexe |
 |---|---|
+| Codespace : pas de dossier `context-nexus`, ou le terminal est resté vide | Vous avez peut-être rouvert un ancien Codespace : supprimez-le sur [github.com/codespaces](https://github.com/codespaces), puis recréez-le depuis le lien de votre squad |
+| Codespace : fenêtre « Faites-vous confiance… » ou « permissions » | Cliquer sur **Approuver le dossier et continuer** et sur **Authorize and continue** (voir la fiche, voie A) |
+| `claude` : commande introuvable | Le Codespace n'a pas fini : attendre « ✓ Codespace prêt », puis ouvrir un nouveau terminal |
 | `context-assemble` : « Aucun artefact pour la squad » | Vérifier le nom : `squad-1-offre`, `squad-2-prix`, `squad-3-paiement`, `squad-4-experience` |
-| `git push` refusé | `git pull --rebase` puis `git push` (vous n'écrivez que dans votre dossier : pas de conflit attendu) |
+| `git push` refusé | `git -C ../context-nexus pull --rebase` puis `git -C ../context-nexus push` (vous n'écrivez que dans votre dossier : pas de conflit attendu) |
 | L'agent ignore le contexte | Vérifier que `CLAUDE.md` contient `@.context/brief.md` et que le fichier existe ; relancer `claude` |
 | Claude demande de se connecter, ou refuse | `claude auth login` ; toujours bloqué : support (AgentOps). Plan B : poste pilote de la squad |
 | Désaccord de contrat avec une voisine | Aller la voir. Toujours bloqué : gate keeper tech (Convergence Arbitrator) |
