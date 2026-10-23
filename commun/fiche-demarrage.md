@@ -17,11 +17,11 @@ Toutes les commandes et tous les liens de cette fiche sont **déjà remplis pour
 
 **Deux postes prêts par squad suffisent.** Cliquez sur le nom de la voie pour aller directement à son pas à pas.
 
-| | [Voie A · Codespace](#voie-a) ⭐ **recommandée** | [Voie B · votre poste](#voie-b) |
-|---|---|---|
-| Pour qui | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal |
-| Il faut | Un navigateur, un compte GitHub et votre compte Claude | Coller une ligne avant le 23/10, et votre compte Claude |
-| Le jour J | Un lien, quelques clics, prêt en 10 minutes environ | La même ligne relancée, puis `claude` |
+|           | [Voie A · Codespace](#voie-a) ⭐ **recommandée**                     | [Voie B · votre poste](#voie-b)                         |
+| --------- | ------------------------------------------------------------------- | ------------------------------------------------------- |
+| Pour qui  | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal                     |
+| Il faut   | Un navigateur, un compte GitHub et votre compte Claude              | Coller une ligne avant le 23/10, et votre compte Claude |
+| Le jour J | Un lien, quelques clics, prêt en 10 minutes environ                 | La même ligne relancée, puis `claude`                   |
 
 **Pour tout le monde, avant le 23/10 :**
 - Créez un compte sur [github.com/signup](https://github.com/signup) si vous n'en avez pas, et envoyez votre **identifiant GitHub** au support.
