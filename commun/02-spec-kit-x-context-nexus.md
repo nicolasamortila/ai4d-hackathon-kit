@@ -3,7 +3,7 @@
 > Spec Kit structure **votre** travail (spec → plan → tâches → code).
 > Le Context Nexus structure **ce que vous partagez** avec les autres squads (contrats, règles, statuts).
 > Ce guide dit, phase par phase, quelle commande lancer, quel fichier lire, quel fichier publier.
-> Les chemins `gabarits/…`, `teams/…`, `tools/…` sont relatifs au dépôt `context-nexus/`.
+> Les chemins `gabarits/…`, `teams/…`, `tools/…` sont relatifs au dépôt `context-nexus/`. Les commandes se lancent **depuis le dossier du starter** : le Nexus est alors à `../context-nexus` (voie A comme voie B).
 
 ## Le principe en une image
 
@@ -31,9 +31,9 @@
 > Le pas à pas complet de la première demi-heure est dans `00-par-ou-commencer.md`.
 
 ```bash
-cd ~/hackathon/context-nexus && git pull
-node tools/context-assemble.mjs --squad <squad> --out ../starter-<squad>/.context/brief.md
-cd ../starter-<squad>
+# depuis le dossier du starter
+git -C ../context-nexus pull
+node ../context-nexus/tools/context-assemble.mjs --squad <squad> --out .context/brief.md
 specify check
 ```
 
@@ -102,9 +102,9 @@ Pour chaque champ échangé avec une autre squad, vérifie type, unité et forma
 2. Après chaque tâche : tests verts, commit. Les critères d'acceptance ont chacun un test nommé (ENG-04).
 3. **Pendant le Develop, un contrat voisin change** (c'est l'événement scripté de la session, annoncé sur l'écran commun). Le Context Engineer lance :
    ```bash
-   cd ~/hackathon/context-nexus && git pull
-   node tools/context-assemble.mjs --squad <squad> --mark-stale --out ../starter-<squad>/.context/brief.md
-   git log -p -1 -- teams/   # lire CE qui a changé, pas seulement QUE ça a changé
+   git -C ../context-nexus pull
+   node ../context-nexus/tools/context-assemble.mjs --squad <squad> --mark-stale --out .context/brief.md
+   git -C ../context-nexus log -p -1 -- teams/   # lire CE qui a changé, pas seulement QUE ça a changé
    ```
 4. Si vos artefacts passent `stale` :
    ```
@@ -131,11 +131,13 @@ Fenêtre bonus après G4 : 15 min pour la squad 1, 10 pour la 2, 5 pour la 3, 0 
 ## Publier dans le Nexus
 
 ```bash
-cd ~/hackathon/context-nexus
-# 1. copier ou mettre à jour le fichier dans teams/<squad>/…
+# depuis le dossier du starter ; le Nexus est à ../context-nexus
+# 1. copier ou mettre à jour le fichier dans ../context-nexus/teams/<squad>/…
 # 2. frontmatter : version incrémentée, last-validated du jour, status, owner, consumes épinglés
-git add teams/<squad> && git commit -m "<squad>: publie <artefact> v<version>"
-git pull --rebase && git push
+git -C ../context-nexus add teams/<squad>
+git -C ../context-nexus commit -m "<squad>: publie <artefact> v<version>"
+git -C ../context-nexus pull --rebase
+git -C ../context-nexus push
 ```
 
 Pour publier une spec Spec Kit, copiez `specs/001-…/spec.md` dans `teams/<squad>/intent/specs/<squad>-001.md`

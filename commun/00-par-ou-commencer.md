@@ -29,12 +29,13 @@ Le contexte partagé est à côté, accessible par `../context-nexus` (dans un C
 - **Voie B · votre poste** : relancez **la même ligne** que pour l'installation (elle met tout à jour, clone le contexte partagé et le starter dans `~/hackathon/`, puis assemble le contexte).
   Puis, dans un **nouveau** terminal : `cd ~/hackathon/starter-<votre-squad>`.
 
-> Voie B sans le nom de la squad, ou starter absent ? Clonez à la main :
+> Voie B sans le nom de la squad, ou starter absent ? Relancez de préférence la ligne d'installation avec le nom de votre squad (Windows et macOS). Sinon, clonez à la main (macOS ou Git Bash) :
 > ```bash
 > mkdir -p ~/hackathon && cd ~/hackathon
 > git clone https://github.com/zenika-dev/ai4d-hackathon-context-nexus.git context-nexus
 > git clone https://github.com/zenika-dev/starter-<votre-squad>.git starter-<votre-squad>
-> cd starter-<votre-squad> && node ../context-nexus/tools/context-assemble.mjs --squad <votre-squad> --out .context/brief.md
+> cd starter-<votre-squad>
+> node ../context-nexus/tools/context-assemble.mjs --squad <votre-squad> --out .context/brief.md
 > ```
 
 **2. Connecter Claude Code à votre compte Claude** : `claude auth login`, puis connexion dans le navigateur. Vérification : `claude auth status --text`.
@@ -101,7 +102,8 @@ Avant votre créneau G1, **publiez** la Business Intent Spec (depuis le dossier 
 # frontmatter du fichier : status: active, owner: <prénom.nom>, last-validated: 2026-10-26
 git -C ../context-nexus add teams/<votre-squad>
 git -C ../context-nexus commit -m "<votre-squad>: publie business-intent v1.0.0"
-git -C ../context-nexus pull --rebase && git -C ../context-nexus push
+git -C ../context-nexus pull --rebase
+git -C ../context-nexus push
 node ../context-nexus/tools/context-assemble.mjs --squad <votre-squad> --check
 ```
 > Plus simple : demandez-le à Claude, « Publie mes changements dans le Context Nexus. » (phrases prêtes dans `fiche-demarrage.md`, section 3).
