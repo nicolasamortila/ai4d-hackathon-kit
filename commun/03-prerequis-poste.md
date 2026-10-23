@@ -17,7 +17,7 @@ Il faut seulement un navigateur et un compte GitHub.
 
 1. Créez un compte sur [github.com](https://github.com) si vous n'en avez pas, et envoyez votre identifiant au support.
 2. Le jour J, ouvrez le dépôt de votre squad, puis cliquez sur **Code → Codespaces → … → New with options…**.
-3. Collez la clé agent de la squad dans le champ indiqué sur la carte de squad posée sur votre table, cliquez sur **Create codespace**, puis attendez 2 à 4 minutes.
+3. Laissez vides les champs `ANTHROPIC_…`, cliquez sur **Create codespace**, puis attendez 2 à 4 minutes.
 
 Le pas à pas illustré est dans la **fiche de démarrage** (`fiche-demarrage.md`, voie A).
 
@@ -47,11 +47,14 @@ Le script installe ce qui manque parmi Git, Node.js 22, Claude Code, uv et Spec 
 Pour seulement vérifier, sans rien installer : ajoutez `-s -- --verifier` après `bash` (macOS), ou lancez
 `$env:VERIFIER_SEULEMENT = "1"` avant la commande (Windows).
 
-## Clés agent
+## Accès à Claude
 
-- Jusqu'au 25/10 : vos tests se font avec les **clés pilote**.
-- Le 26/10 : chaque squad reçoit une **clé dédiée**, hors quota personnel, avec un budget de tokens suivi en direct.
-  Les clés pilote restent actives jusqu'au 27/10 : pas de bascule de gateway pendant la session.
+Vous utilisez **votre compte Claude** (l'abonnement fourni par l'entreprise), pas une clé API :
+- vérifiez avant le 23/10 que vous pouvez vous connecter à [claude.ai](https://claude.ai) ;
+- dans Claude Code, la connexion se fait avec `claude auth login` (ou au premier lancement de `claude`), puis dans le navigateur ;
+- `claude auth status --text` affiche le compte connecté.
+
+Pas de compte Claude ? Signalez-le au support avant le 23/10.
 
 ## Ce que vous n'avez pas besoin de préparer
 

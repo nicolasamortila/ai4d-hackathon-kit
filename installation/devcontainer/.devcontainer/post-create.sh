@@ -39,4 +39,6 @@ if [ -f package.json ]; then echo "▸ npm install"; npm install --silent; fi
 [ -d .specify ] || echo "⚠ Spec Kit n'est pas initialisé dans ce starter : specify init --here --ai claude"
 
 echo
-echo "✓ Codespace prêt. Ouvrez un terminal et tapez : claude"
+echo "✓ Codespace prêt."
+echo "  1. Connectez Claude à votre compte : claude auth login"
+echo "  2. Puis parlez à l'agent : icône Claude à gauche, ou claude dans le terminal"

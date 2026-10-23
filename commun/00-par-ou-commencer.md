@@ -18,7 +18,7 @@
 À votre table de squad, un seul poste suffit pour les étapes 1 à 4 ; les autres suivent sur leur propre poste.
 
 > **En Codespace** : ouvrez le dépôt de votre squad, cliquez sur **Code → Codespaces → … → New with options…**,
-> collez la clé de la squad dans le champ indiqué sur la carte de squad, puis **Create codespace**. Les étapes 1 à 4 se font toutes seules ;
+> laissez vides les champs `ANTHROPIC_…`, puis **Create codespace**, et connectez-vous avec `claude auth login`. Les étapes 1 à 4 se font toutes seules ;
 > passez directement à l'étape 5. Pas à pas détaillé : `fiche-demarrage.md`, voie A.
 
 **1. Récupérer les deux dépôts, côte à côte**
@@ -29,7 +29,7 @@ git clone <url-du-starter-de-votre-squad> starter-<votre-squad>
 ```
 > L'URL du starter de votre squad est affichée sur l'écran commun et sur le mur de squad.
 
-**2. Brancher la clé agent de la squad** (remise sur place) selon la consigne du support.
+**2. Connecter Claude Code à votre compte Claude** : `claude auth login`, puis connexion dans le navigateur. Vérification : `claude auth status --text`.
 
 **3. Assembler le contexte de votre squad**
 ```bash
@@ -118,6 +118,6 @@ puis publier le contrat v1. Tout est détaillé, avec les prompts, dans `02-spec
 | `context-assemble` : « Aucun artefact pour la squad » | Vérifier le nom : `squad-1-offre`, `squad-2-prix`, `squad-3-paiement`, `squad-4-experience` |
 | `git push` refusé | `git pull --rebase` puis `git push` (vous n'écrivez que dans votre dossier : pas de conflit attendu) |
 | L'agent ignore le contexte | Vérifier que `CLAUDE.md` contient `@.context/brief.md` et que le fichier existe ; relancer `claude` |
-| Clé refusée, tokens épuisés | Lever la main : support (AgentOps). Plan B : poste d'animateur pour la squad |
+| Claude demande de se connecter, ou refuse | `claude auth login` ; toujours bloqué : support (AgentOps). Plan B : poste pilote de la squad |
 | Désaccord de contrat avec une voisine | Aller la voir. Toujours bloqué : gate keeper tech (Convergence Arbitrator) |
 | Bloqué plus de 5 minutes | Lever la main |

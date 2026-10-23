@@ -22,7 +22,7 @@ Kit complet : [github.com/zenika-dev/ai4d-hackathon-kit](https://github.com/zeni
 | | Voie A · Codespace | Voie B · votre poste |
 |---|---|---|
 | Pour qui | **Vous n'êtes pas développeur** (PO, designer, Scrum Master, data…) | Vous êtes à l'aise avec un terminal |
-| Il faut | Un navigateur et un compte GitHub | Lancer un script d'installation avant le 23/10 |
+| Il faut | Un navigateur, un compte GitHub et votre compte Claude | Lancer un script d'installation avant le 23/10, et votre compte Claude |
 | Le jour J | 3 clics, tout est prêt en 3 minutes | 3 commandes |
 
 ---
@@ -36,18 +36,23 @@ l'éditeur (VS Code), l'agent Claude Code, Spec Kit, le dépôt de votre squad e
 
 1. Créez un compte sur [github.com/signup](https://github.com/signup) si vous n'en avez pas (adresse pro conseillée).
 2. Envoyez votre **identifiant GitHub** au support : il vous donnera accès au contexte partagé.
+3. Vérifiez que vous pouvez vous connecter à [claude.ai](https://claude.ai) avec votre **compte Claude** (l'abonnement fourni par l'entreprise).
 
 ### Le jour J, à 12 h 30
 
 1. **Connectez-vous à GitHub**, puis cliquez sur le lien **« Ouvrir votre Codespace »** de votre squad (tableau « Vos liens »).
 2. La page « Create a new codespace » s'affiche. *Autre chemin, si le lien ne marche pas : ouvrez le dépôt de votre squad,
    bouton vert **Code** → onglet **Codespaces** → **…** → **New with options…**.*
-3. Sur la page qui s'ouvre, collez la **clé agent de la squad** dans le champ indiqué sur la **carte de squad** posée sur votre table
-   (en général `ANTHROPIC_API_KEY`). Laissez les autres champs vides, sauf indication de la carte. Cliquez sur **Create codespace**.
+3. La page propose des champs `ANTHROPIC_…` : **laissez-les tous vides**. Vous vous connecterez avec votre compte Claude à l'étape 5,
+   pas avec une clé. Cliquez sur **Create codespace**.
 4. **Patientez 2 à 4 minutes.** Un éditeur s'ouvre dans l'onglet ; en bas, un terminal affiche l'installation.
    C'est prêt quand il écrit **« ✓ Codespace prêt »**.
-5. **Parlez à l'agent** : cliquez sur l'icône Claude dans la barre de gauche (ou tapez `claude` dans le terminal puis Entrée).
-   Si l'agent demande s'il doit utiliser la clé détectée, répondez **Oui**.
+5. **Connectez Claude à votre compte** (une seule fois par Codespace) : dans le terminal en bas, tapez `claude auth login` puis Entrée.
+   - Un lien s'affiche : ouvrez-le (Ctrl + clic, ou Cmd + clic sur Mac) et connectez-vous à Claude avec votre compte habituel, puis cliquez sur **Autoriser**.
+   - Si la page affiche un **code**, copiez-le, revenez dans le terminal, collez-le et appuyez sur Entrée.
+   - Pour vérifier : `claude auth status --text` doit afficher votre adresse e-mail.
+
+   Puis **parlez à l'agent** : cliquez sur l'icône Claude dans la barre de gauche (ou tapez `claude` dans le terminal).
 6. **Vérifiez** en lui écrivant :
    > Résume .context/brief.md : notre volet, les contrats que nous publions et ceux que nous consommons.
 
@@ -79,7 +84,8 @@ Il lit les fichiers, propose des modifications et vous demande votre accord avan
 - Les fichiers sont à gauche : votre dépôt de squad, et le contexte partagé dans le dossier `context-nexus` à côté.
 - Vous avez fermé l'onglet ? Retrouvez votre Codespace sur [github.com/codespaces](https://github.com/codespaces). Rien n'est perdu.
   Ne recliquez pas sur le lien « Ouvrir votre Codespace » : il en créerait un deuxième, vide de votre travail non publié.
-- Après 30 minutes sans activité, le Codespace se met en veille : rouvrez-le, il redémarre en quelques secondes.
+- Après 30 minutes sans activité, le Codespace se met en veille : rouvrez-le, il redémarre en quelques secondes, toujours connecté à votre compte Claude.
+- Claude vous demande de vous connecter ? Relancez `claude auth login`. Le Codespace est **personnel** : ne le partagez pas, il est connecté à votre compte.
 - Le terminal ne vous parle pas ? Vous n'en avez pas besoin : le Context Engineer de la squad lance les commandes. Vous travaillez avec l'agent.
 
 ---
@@ -117,6 +123,7 @@ cd context-nexus && node tools/context-assemble.mjs --squad <squad> --out ../sta
 cd ../starter-<squad> && claude
 ```
 
+Au premier lancement, Claude Code propose de se connecter : choisissez le **compte Claude avec abonnement**, puis connectez-vous dans le navigateur qui s'ouvre.
 Puis vérifiez avec la même question qu'en voie A (étape 6), et tapez `/speckit` : les commandes doivent apparaître.
 
 `<squad>` : `squad-1-offre`, `squad-2-prix`, `squad-3-paiement` ou `squad-4-experience`.

@@ -9,9 +9,9 @@
     "SPEC_KIT_REF": "main"
   },
   "secrets": {
-    "ANTHROPIC_API_KEY": { "description": "Clé agent de votre squad (carte de squad). Laisser vide si la carte indique un jeton de gateway." },
-    "ANTHROPIC_AUTH_TOKEN": { "description": "Jeton de la gateway, uniquement si la carte de squad l'indique. Sinon, laisser vide." },
-    "ANTHROPIC_BASE_URL": { "description": "Adresse de la gateway, uniquement si la carte de squad l'indique. Sinon, laisser vide." }
+    "ANTHROPIC_API_KEY": { "description": "À LAISSER VIDE si vous avez un compte Claude (abonnement) : vous vous connecterez avec claude auth login. Seulement pour une clé API." },
+    "ANTHROPIC_AUTH_TOKEN": { "description": "À laisser vide. Seulement pour un jeton de gateway." },
+    "ANTHROPIC_BASE_URL": { "description": "À laisser vide. Seulement pour une gateway." }
   },
   "customizations": {
     "codespaces": {
