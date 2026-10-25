@@ -8,7 +8,7 @@
 ## Avant · d'ici le vendredi 23/10 (10 minutes)
 
 1. Lire `01-bases-en-5-minutes.md` et la fiche de votre squad : `squads/<votre-squad>/KIT.md`.
-2. Vérifier que vous pouvez vous connecter à [claude.ai](https://claude.ai) avec votre **compte Claude** : Claude Code s'y connecte avec `claude auth login`, sans clé API.
+2. Rien à faire côté Claude : le **compte Claude** est fourni lundi, sur place, par l'équipe Programme AI4D. Claude Code s'y connecte avec `claude auth login`, sans clé API.
 3. Choisir votre voie (détails dans `fiche-demarrage.md` et `03-prerequis-poste.md`) :
    - **Voie A · Codespace** (recommandée, rien à installer) : créez un compte GitHub et envoyez votre identifiant au support. Le jour J, vous cliquerez sur le lien Codespace de votre squad.
    - **Voie B · votre poste** : collez la ligne d'installation de votre squad (PowerShell sous Windows, Terminal sous macOS), sans droits administrateur.
@@ -38,7 +38,7 @@ Le contexte partagé est à côté, accessible par `../context-nexus` (dans un C
 > node ../context-nexus/tools/context-assemble.mjs --squad <votre-squad> --out .context/brief.md
 > ```
 
-**2. Connecter Claude Code à votre compte Claude** : `claude auth login`, puis connexion dans le navigateur. Vérification : `claude auth status --text`.
+**2. Connecter Claude Code au compte Claude fourni sur place** : `claude auth login`, puis connexion dans le navigateur. Vérification : `claude auth status --text`.
 
 **3. Vérifier le starter**
 ```bash
@@ -64,9 +64,9 @@ Puis, dans Claude Code, tapez exactement :
 Résume en 10 lignes ce que contient .context/brief.md : qui nous sommes, ce que nous devons
 construire, quels contrats nous publions, lesquels nous consommons et à quelles versions.
 ```
-Si la réponse cite votre volet et les contrats de vos voisines, l'agent voit bien le Context Nexus. Vous êtes prêts.
+Si la réponse cite votre volet et les contrats des autres squads, l'agent voit bien le Context Nexus. Vous êtes prêts.
 
-Tapez aussi `/speckit` : les commandes `/speckit-constitution` à `/speckit-implement` doivent apparaître.
+Plus simple : tapez `/bienvenue`, qui fait ces vérifications pour vous et donne le premier pas. Tapez aussi `/speckit` : les commandes `/speckit-constitution` à `/speckit-implement` doivent apparaître.
 
 ## La première heure · 13 h 30 – 14 h 30 (horaires de la squad 1, +5 min par squad)
 
@@ -80,7 +80,7 @@ Tapez aussi `/speckit` : les commandes `/speckit-constitution` à `/speckit-impl
 
 | Qui | Fait quoi |
 |---|---|
-| **Context Engineer** | Relance `context-assemble`, ouvre les contrats v0 des voisines et lit à voix haute ce qu'ils attendent de vous |
+| **Context Engineer** | Relance `context-assemble`, ouvre les contrats v0 des autres squads et lit à voix haute ce qu'ils attendent de vous |
 | **Specification Engineer** | Copie le gabarit et tient la plume des 5 champs (voir ci-dessous) |
 | **Orchestrator** | Fait travailler l'agent sur les questions ouvertes (prompt ci-dessous) |
 | **Decision Guarantor** | Fait trancher le critère de succès chiffré et la priorité, prépare le passage de G1 |
@@ -132,5 +132,5 @@ Les commandes exactes de votre squad sont dans la section de votre squad de `fic
 | `git push` refusé | `git -C ../context-nexus pull --rebase` puis `git -C ../context-nexus push` (vous n'écrivez que dans votre dossier : pas de conflit attendu) |
 | L'agent ignore le contexte | Vérifier que `CLAUDE.md` contient `@.context/brief.md` et que le fichier existe ; relancer `claude` |
 | Claude demande de se connecter, ou refuse | `claude auth login` ; toujours bloqué : support (AgentOps). Plan B : poste pilote de la squad |
-| Désaccord de contrat avec une voisine | Aller la voir. Toujours bloqué : gate keeper tech (Convergence Arbitrator) |
+| Désaccord de contrat avec une autre squad | Aller la voir. Toujours bloqué : gate keeper tech (Convergence Arbitrator) |
 | Bloqué plus de 5 minutes | Lever la main |
