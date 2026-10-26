@@ -17,7 +17,7 @@ Il faut seulement un navigateur et un compte GitHub.
 
 1. Créez un compte sur [github.com](https://github.com) si vous n'en avez pas, et envoyez votre identifiant au support.
 2. Le jour J, cliquez sur le **lien Codespace de votre squad** (dans la fiche de démarrage, voie A).
-3. Ne changez aucun réglage, cliquez sur le bouton vert **Create codespace** en bas à droite, puis attendez environ 10 minutes, jusqu'au message « ✓ Codespace prêt » dans le terminal.
+3. Ne changez aucun réglage, cliquez sur le bouton vert **Create codespace** en bas à droite, puis attendez environ 2 minutes, jusqu'au message « Welcome to Codespaces! » dans le terminal.
 
 Le pas à pas illustré est dans la **fiche de démarrage** (`fiche-demarrage.md`, voie A).
 

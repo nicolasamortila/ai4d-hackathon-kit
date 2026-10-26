@@ -24,8 +24,8 @@ Le contexte partagé est à côté, accessible par `../context-nexus` (dans un C
 
 **1. Ouvrir votre environnement**
 
-- **Voie A · Codespace** : cliquez sur le lien Codespace de votre squad (`fiche-demarrage.md`, voie A). Comptez environ **10 minutes**, avec deux fenêtres à valider
-  (permissions, confiance du dossier). C'est prêt quand le terminal écrit **« ✓ Codespace prêt »** : le dépôt de la squad et le dossier `context-nexus` sont alors là, et le contexte est déjà assemblé.
+- **Voie A · Codespace** : cliquez sur le lien Codespace de votre squad (`fiche-demarrage.md`, voie A). Comptez environ **2 minutes**, avec deux fenêtres à valider
+  (permissions, confiance du dossier). C'est prêt quand le terminal écrit **« Welcome to Codespaces! »** : le dépôt de la squad et le dossier `context-nexus` sont alors là, et le contexte est déjà assemblé.
 - **Voie B · votre poste** : relancez **la même ligne** que pour l'installation (elle met tout à jour, clone le contexte partagé et le starter dans `~/hackathon/`, puis assemble le contexte).
   Puis, dans un **nouveau** terminal : `cd ~/hackathon/starter-<votre-squad>`.
 
@@ -127,7 +127,7 @@ Les commandes exactes de votre squad sont dans la section de votre squad de `fic
 |---|---|
 | Codespace : pas de dossier `context-nexus`, ou le terminal est resté vide | Vous avez peut-être rouvert un ancien Codespace : supprimez-le sur [github.com/codespaces](https://github.com/codespaces), puis recréez-le depuis le lien de votre squad |
 | Codespace : fenêtre « Faites-vous confiance… » ou « permissions » | Cliquer sur **Approuver le dossier et continuer** et sur **Authorize and continue** (voir la fiche, voie A) |
-| `claude` : commande introuvable | Le Codespace n'a pas fini : attendre « ✓ Codespace prêt », puis ouvrir un nouveau terminal |
+| `claude` : commande introuvable | Ouvrir un nouveau terminal (bouton + du terminal) et retaper la commande |
 | `context-assemble` : « Aucun artefact pour la squad » | Vérifier le nom : `squad-1-offre`, `squad-2-prix`, `squad-3-paiement`, `squad-4-experience` |
 | `git push` refusé | `git -C ../context-nexus pull --rebase` puis `git -C ../context-nexus push` (vous n'écrivez que dans votre dossier : pas de conflit attendu) |
 | L'agent ignore le contexte | Vérifier que `CLAUDE.md` contient `@.context/brief.md` et que le fichier existe ; relancer `claude` |

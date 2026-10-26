@@ -11,7 +11,7 @@
   --bg:#020032; --surface:#0B0B48; --surface2:#14145A; --line:#2B2B6B;
   --ink:#E1EBEB; --muted:#B2B2C8;
   --teal:#5EBBC6; --teal-t:#0A3550; --teal-b:#14586B;
-  --org:#D6A978; --org-t:#2D1530; --org-b:#7A1042;
+  --org:#D6A978;
   --band:#14145A; --on-accent:#020032;
   --font:'Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
   --mono:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
@@ -25,14 +25,16 @@ a{color:var(--teal)}
 .wrap{max-width:860px;margin:0 auto}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--org)}
 .head{padding:34px 0 20px;display:flex;flex-direction:column;gap:12px}
-.head h1{font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.15}
+.head h1{font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.15;text-wrap:balance}
 .head .lead{color:var(--muted);font-size:18px;max-width:56ch}
-.prog{position:sticky;top:0;z-index:10;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.prog{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
 .prog .row{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
 .prog .bar{flex:1;height:8px;background:var(--surface2);border-radius:4px;overflow:hidden}
 .prog .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .25s}
+.prog button{background:none;border:0;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline}
 .sec{padding-top:28px}
 .sec>h2{font-size:clamp(20px,3vw,26px);font-weight:700;margin-bottom:12px}
+.sec>p.intro{color:var(--muted);margin-bottom:12px}
 .voies{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
 .voie{cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:4px;background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:14px 16px}
 .voie .n{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--org)}
@@ -43,7 +45,7 @@ a{color:var(--teal)}
 ol.steps{list-style:none;counter-reset:s;padding:0;display:flex;flex-direction:column;gap:12px}
 ol.steps>li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
 ol.steps>li.done{background:var(--teal-t);border-color:var(--teal-b)}
-.ck{width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:transparent;color:var(--bg);font:inherit;font-weight:700;font-size:20px;cursor:pointer;display:grid;place-items:center;position:relative}
+.ck{width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:transparent;color:var(--bg);font:inherit;font-weight:700;font-size:20px;cursor:pointer;display:grid;place-items:center}
 .ck::before{content:counter(s);color:var(--ink)}
 li.done .ck{background:var(--teal);border-color:var(--teal)}
 li.done .ck::before{content:"✓";color:var(--on-accent)}
@@ -56,34 +58,27 @@ li.done .ck::before{content:"✓";color:var(--on-accent)}
 .code{display:flex;align-items:stretch;border-radius:10px;overflow:hidden;background:var(--band);min-width:0}
 .code pre{margin:0;flex:1;min-width:0;overflow-x:auto;padding:12px 14px;font-family:var(--mono);font-size:14px;line-height:1.55;white-space:pre}
 .code button{cursor:pointer;flex:none;border:0;border-left:1px solid var(--line);background:transparent;color:var(--teal);font:inherit;font-weight:700;font-size:13px;padding:0 14px}
-.card{border-radius:14px;padding:14px 18px;border:1px solid var(--line);background:var(--surface)}
-.card.teal{background:var(--teal-t);border-color:var(--teal-b)}
-.card.org{background:var(--org-t);border-color:var(--org-b)}
+.mono{font-family:var(--mono)}
+.card{border-radius:14px;padding:14px 18px;border:1px solid var(--teal-b);background:var(--teal-t);margin-top:18px}
 details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px}
 details summary{cursor:pointer;font-weight:700}
-details p,details ul{margin-top:8px;font-size:15.5px}
-details ul{padding-left:1.2em}
-details li+li{margin-top:6px}
-.os{display:flex;gap:6px;margin:8px 0}
-.os button{cursor:pointer;background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit;font-weight:700;font-size:14px;color:var(--ink)}
-.os button[aria-pressed="true"]{background:var(--teal);color:var(--on-accent);border-color:var(--teal)}
-.hide{display:none!important}
-.help{margin-top:30px;font-size:15px;color:var(--muted)} .help b{color:var(--ink)}
+details p{margin-top:8px;font-size:15.5px}
 :focus-visible{outline:3px solid var(--org);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.prog .bar i{transition:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <p class="eyebrow">Hackathon Champions · lundi 26 octobre · 12 h 30</p>
+    <p class="eyebrow">Hackathon Champions · lundi 26 octobre</p>
     <h1>Votre démarrage en six étapes</h1>
-    <p class="lead">Une dizaine de minutes. Cochez au fur et à mesure : vos cases restent sur cet appareil.</p>
+    <p class="lead">Une dizaine de minutes, sans rien installer : un navigateur et un compte GitHub suffisent. Cochez au fur et à mesure.</p>
   </div>
-  <div class="prog" aria-live="polite"><div class="row"><span id="pn">0 sur 6</span><div class="bar"><i id="pb"></i></div><button type="button" id="reset" style="background:none;border:0;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline">Tout décocher</button></div></div>
+  <div class="prog" aria-live="polite"><div class="row"><span id="pn">0 sur 6</span><div class="bar"><i id="pb"></i></div><button type="button" id="reset">Tout décocher</button></div></div>
 
-  <section class="sec" id="s-squad">
+  <section class="sec">
     <h2>D'abord, votre squad</h2>
-    <p class="muted" style="color:var(--muted);margin-bottom:12px">L'animation vous répartit dès 12 h 30. Choisissez celle qu'on vous annonce.</p>
+    <p class="intro">Choisissez celle que l'animation vous annonce.</p>
     <div class="voies" id="voies"></div>
   </section>
 
@@ -91,59 +86,47 @@ details li+li{margin-top:6px}
     <ol class="steps" id="steps">
       <li data-k="1"><button type="button" class="ck" aria-label="Cocher l'étape 1"></button><div class="b">
         <h3>Connectez-vous à GitHub dans ce navigateur</h3>
-        <p class="s">Le Codespace ne s'ouvre que si vous êtes connecté·e avec le compte GitHub que vous avez envoyé au support.</p>
         <a class="btn" href="https://github.com/login" target="_blank" rel="noopener">Ouvrir GitHub</a>
       </div></li>
       <li data-k="2"><button type="button" class="ck" aria-label="Cocher l'étape 2"></button><div class="b">
         <h3>Ouvrez le Codespace de votre squad</h3>
-        <p class="s">Ne changez aucun réglage : cliquez sur le bouton vert <b>Create codespace</b>. Si GitHub demande l'accès au contexte partagé, choisissez <b>Authorize and continue</b>. Si l'éditeur demande de faire confiance au dossier, choisissez <b>Approuver le dossier et continuer</b>.</p>
         <a class="btn off" id="cs" href="#" target="_blank" rel="noopener">Choisissez d'abord votre squad</a>
+        <p class="s">Cliquez sur <b>Create codespace</b>. Acceptez les fenêtres qui s'ouvrent.</p>
       </div></li>
       <li data-k="3"><button type="button" class="ck" aria-label="Cocher l'étape 3"></button><div class="b">
-        <h3>Attendez le message « ✓ Codespace prêt »</h3>
-        <p class="s">Le terminal installe les outils en bas de l'écran : quelques minutes. Ne tapez rien avant ce message. Si vous fermez l'onglet, retrouvez votre Codespace sur <a href="https://github.com/codespaces" target="_blank" rel="noopener">github.com/codespaces</a> : ne recliquez pas le lien de votre squad, cela en créerait un deuxième.</p>
+        <h3>Attendez le message « Welcome to Codespaces! »</h3>
+        <p class="s">Environ 2 minutes, dans le terminal en bas. Ne tapez rien avant.</p>
       </div></li>
       <li data-k="4"><button type="button" class="ck" aria-label="Cocher l'étape 4"></button><div class="b">
-        <h3>Connectez Claude avec le compte fourni</h3>
-        <p>Dans le terminal, tapez :</p>
+        <h3>Connectez Claude avec le compte qu'on vous a remis</h3>
+        <p>Cliquez dans le terminal et tapez :</p>
         <div class="code"><pre>claude auth login</pre><button type="button" data-copy="claude auth login">Copier</button></div>
-        <p class="s">Une fenêtre propose d'ouvrir un lien : cliquez sur <b>Ouvrir</b>, connectez-vous avec les identifiants remis lundi par l'équipe Programme AI4D, puis autorisez. <b>La page affiche ensuite un code : copiez-le, revenez dans le terminal (il attend « Paste code here »), collez-le et appuyez sur Entrée.</b></p>
-        <p>Pour vérifier que c'est bon, tapez :</p>
-        <div class="code"><pre>claude auth status --text</pre><button type="button" data-copy="claude auth status --text">Copier</button></div>
-        <p class="s">Il doit afficher votre compte. S'il répond « Not logged in », le code n'a pas encore été collé.</p>
+        <p class="s">Ouvrez le lien affiché dans le terminal (Cmd + clic, ou Ctrl + clic sous Windows), connectez-vous, copiez le code obtenu, collez-le dans le terminal, puis Entrée. C'est bon quand il affiche « Login successful ».</p>
       </div></li>
       <li data-k="5"><button type="button" class="ck" aria-label="Cocher l'étape 5"></button><div class="b">
-        <h3>Ouvrez Claude et laissez-le vous accueillir</h3>
-        <p>Dans la <b>barre verticale tout à gauche du Codespace</b>, cliquez sur la petite <b>icône Claude</b> (une étoile), puis sur <b>Nouvelle session</b> (<i>New session</i>). Un panneau Claude s'ouvre à côté de l'éditeur. Dans sa zone de saisie, en bas, tapez :</p>
+        <h3>Ouvrez Claude et tapez /bienvenue</h3>
+        <p>Dans la <b>barre verticale tout à gauche</b>, cliquez sur l'<b>icône Claude</b> (une étoile), puis sur <b>Nouvelle session</b> (<i>New session</i>). Dans la zone de saisie du panneau qui s'ouvre, tapez :</p>
         <div class="code"><pre>/bienvenue</pre><button type="button" data-copy="/bienvenue">Copier</button></div>
-        <p class="s">L'accueil vérifie votre environnement et vous donne votre premier pas. Quand vous tapez <b>/</b>, un menu liste les commandes, dont <b>/bienvenue</b> et <b>/coach</b>. Votre consommation apparaît dans la barre de gauche, sous « Session ». Ignorez le panneau « Créer avec des assistants » à droite : ce n'est pas Claude.</p>
-        <p class="s">Vous préférez le terminal ? Tapez <span style="font-family:var(--mono)">claude</span>. Au premier lancement, il pose quelques questions (style de texte, notes de sécurité, confiance du dossier) : répondez par Entrée, et <b>Oui</b> à la confiance du dossier.</p>
+        <p class="s">Ignorez le panneau « Créer avec des assistants » qui s'ouvre à droite : c'est Copilot, pas Claude.</p>
       </div></li>
       <li data-k="6"><button type="button" class="ck" aria-label="Cocher l'étape 6"></button><div class="b">
-        <h3>Laissez-vous guider : la phrase « À vous », puis /coach</h3>
-        <p class="s">L'accueil se termine par une phrase à taper dans Claude : c'est votre première action. Ensuite, à chaque fois que vous vous demandez quoi faire, tapez <b>/coach</b> : il dit où vous en êtes et la prochaine phrase à taper.</p>
-        <p class="s"><b>L'écran de votre squad</b> (avancement, prochaine étape, gates, contrats de toutes les squads) : une notification « port 4000 » propose de l'ouvrir. Sinon, onglet <b>Ports</b> en bas du Codespace, ligne 4000, icône globe.</p>
+        <h3>Tapez la phrase « À vous », puis /coach</h3>
+        <p class="s">Perdu ? Tapez <b>/coach</b> : il dit quoi faire ensuite.</p>
+        <p class="s">L'écran de votre squad est fermé ? Onglet <b>Ports</b> en bas, ligne 4000, icône globe.</p>
       </div></li>
     </ol>
   </section>
 
-  <div class="card teal" style="margin-top:18px"><b>Besoin d'aide ?</b> Vous pouvez faire appel au support de l'équipe Programme AI4D.</div>
+  <div class="card"><b>Bloqué plus de 2 minutes ?</b> Levez la main : l'animation vient vous aider.</div>
 
   <section class="sec">
     <h2>Si quelque chose ne va pas</h2>
-    <details><summary>Le terminal est resté vide, ou le dossier context-nexus n'apparaît pas</summary><p>Vous avez peut-être rouvert un ancien Codespace. Supprimez-le sur <a href="https://github.com/codespaces" target="_blank" rel="noopener">github.com/codespaces</a>, puis recréez-le depuis le lien de votre squad (étape 2).</p></details>
-    <details><summary>« claude » : commande introuvable</summary><p>Le Codespace n'a pas fini son installation. Attendez « ✓ Codespace prêt », puis ouvrez un nouveau terminal.</p></details>
-    <details><summary>« Not logged in » alors que j'ai autorisé la connexion</summary><p>Le terminal où tourne <span style="font-family:var(--mono)">claude auth login</span> attend encore le code que la page de Claude affiche : collez-le dans ce terminal, puis Entrée. Si la page a expiré : Ctrl + C, puis relancez <span style="font-family:var(--mono)">claude auth login</span>.</p></details>
-    <details><summary>Claude demande de se connecter, ou refuse</summary><p>Relancez <span style="font-family:var(--mono)">claude auth login</span>. Toujours bloqué : faites appel au support de l'équipe Programme AI4D.</p></details>
-    <details><summary>L'agent ne semble pas connaître mon volet, ou la commande /bienvenue n'existe pas</summary><p>Tapez <span style="font-family:var(--mono)">npm run context</span>, relancez <span style="font-family:var(--mono)">claude</span>, puis <span style="font-family:var(--mono)">/bienvenue</span>. Le résumé doit citer votre volet et les contrats des autres squads.</p></details>
-    <details><summary>Je préfère travailler sur mon poste plutôt que dans un Codespace</summary>
-      <p>Une ligne installe tout (Git, Node.js, Claude Code, Spec Kit), sans droits administrateur. Choisissez votre système :</p>
-      <div class="os" id="os"><button type="button" data-os="mac" aria-pressed="true">macOS</button><button type="button" data-os="win" aria-pressed="false">Windows</button></div>
-      <div class="code"><pre id="inst">Choisissez d'abord votre squad.</pre><button type="button" id="inst-copy" data-copy="">Copier</button></div>
-      <p class="s" style="color:var(--muted)">Puis, dans un nouveau terminal : <span style="font-family:var(--mono)" id="cdline">cd ~/hackathon/starter-…</span>, <span style="font-family:var(--mono)">claude auth login</span>, <span style="font-family:var(--mono)">claude</span>, <span style="font-family:var(--mono)">/bienvenue</span>.</p>
-    </details>
+    <details><summary>« claude » : commande introuvable</summary><p>Ouvrez un nouveau terminal (bouton + du terminal) et retapez la commande.</p></details>
+    <details><summary>Claude dit « Not logged in » ou demande de se connecter</summary><p>Le code de la page de connexion n'a pas été collé dans le terminal. Collez-le, puis Entrée. Si la page a expiré : Ctrl + C dans le terminal, puis relancez <span class="mono">claude auth login</span>.</p></details>
+    <details><summary>/bienvenue n'apparaît pas quand je tape /</summary><p>Fermez le panneau Claude et ouvrez une <b>Nouvelle session</b>. Toujours rien : levez la main.</p></details>
+    <details><summary>J'ai fermé l'onglet du Codespace</summary><p>Retrouvez-le sur <a href="https://github.com/codespaces" target="_blank" rel="noopener">github.com/codespaces</a>. Ne recliquez pas le bouton de l'étape 2 : cela en créerait un deuxième.</p></details>
+    <details><summary>Rien ne s'affiche dans le terminal après 10 minutes</summary><p>Vous avez sans doute rouvert un ancien Codespace. Supprimez-le sur <a href="https://github.com/codespaces" target="_blank" rel="noopener">github.com/codespaces</a>, puis recréez-le avec le bouton de l'étape 2.</p></details>
   </section>
-  <p class="help">Source : kit de démarrage du hackathon, voie A (Codespace). Les liens de squad correspondent aux dépôts <span style="font-family:var(--mono)">zenika-dev/starter-squad-…</span>.</p>
 </div>
 
 <script>
@@ -154,31 +137,18 @@ details li+li{margin-top:6px}
     { id: 'squad-3-paiement', n: 3, label: 'Paiement', d: "L'encaissement du supplément" },
     { id: 'squad-4-experience', n: 4, label: 'Expérience', d: 'La tuile et la carte dans l\'app' }
   ];
-  var BASE = 'https://github.com/zenika-dev/ai4d-hackathon-kit';
   function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   var $ = function (id) { return document.getElementById(id); };
   var squad = (location.hash || '').replace('#', '') || get('dj_squad') || '';
   if (!SQUADS.some(function (s) { return s.id === squad; })) squad = '';
-  var os = get('dj_os') || (/Win/.test(navigator.platform) ? 'win' : 'mac');
-
-  function install() {
-    var s = squad || 'squad-2-prix';
-    var cmd = os === 'win'
-      ? '$env:SQUAD = "' + s + '"; irm https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.ps1 | iex'
-      : 'curl -fsSL https://raw.githubusercontent.com/zenika-dev/ai4d-hackathon-kit/main/installation/installer-prerequis.sh | bash -s -- ' + s;
-    $('inst').textContent = squad ? cmd : 'Choisissez d\'abord votre squad.';
-    $('inst-copy').setAttribute('data-copy', squad ? cmd : '');
-    $('cdline').textContent = (os === 'win' ? 'cd $HOME\\hackathon\\starter-' : 'cd ~/hackathon/starter-') + (squad || '…');
-    Array.prototype.forEach.call(document.querySelectorAll('#os button'), function (b) { b.setAttribute('aria-pressed', b.dataset.os === os ? 'true' : 'false'); });
-  }
 
   function renderSquads() {
     $('voies').innerHTML = SQUADS.map(function (s) {
       return '<button type="button" class="voie" data-id="' + s.id + '" aria-pressed="' + (s.id === squad) + '"><span class="n">Squad ' + s.n + '</span><b>' + s.label + '</b><span class="d">' + s.d + '</span></button>';
     }).join('');
     Array.prototype.forEach.call(document.querySelectorAll('.voie'), function (b) {
-      b.addEventListener('click', function () { squad = b.dataset.id; set('dj_squad', squad); history.replaceState(null, '', '#' + squad); renderSquads(); link(); install(); });
+      b.addEventListener('click', function () { squad = b.dataset.id; set('dj_squad', squad); try { history.replaceState(null, '', '#' + squad); } catch (e) {} renderSquads(); link(); });
     });
   }
 
@@ -199,17 +169,17 @@ details li+li{margin-top:6px}
     b.addEventListener('click', function () { var k = b.closest('li').dataset.k; set('dj_' + k, get('dj_' + k) === '1' ? '0' : '1'); progress(); });
   });
   $('reset').addEventListener('click', function () { for (var i = 1; i <= 6; i++) set('dj_' + i, '0'); progress(); });
-  Array.prototype.forEach.call(document.querySelectorAll('#os button'), function (b) { b.addEventListener('click', function () { os = b.dataset.os; set('dj_os', os); install(); }); });
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-copy]');
-    if (!b || !b.getAttribute('data-copy')) return;
+    if (!b) return;
     var t = b.getAttribute('data-copy');
     var done = function () { var old = b.textContent; b.textContent = 'Copié'; setTimeout(function () { b.textContent = old; }, 1400); };
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, function () {});
-    else { var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (x) {} document.body.removeChild(ta); }
+    var fallback = function () { var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (x) {} document.body.removeChild(ta); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, fallback);
+    else fallback();
   });
 
-  renderSquads(); link(); install(); progress();
+  renderSquads(); link(); progress();
 })();
 </script>
 </body>

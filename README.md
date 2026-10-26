@@ -33,7 +33,7 @@ Le Codespace s'ouvre dans le navigateur avec tout installé : VS Code, Claude Co
 | **3 · Paiement** | [starter-squad-3-paiement](https://codespaces.new/zenika-dev/starter-squad-3-paiement) |
 | **4 · Expérience** | [starter-squad-4-experience](https://codespaces.new/zenika-dev/starter-squad-4-experience) |
 
-Comptez environ 10 minutes, jusqu'au message « ✓ Codespace prêt » dans le terminal, puis connectez Claude avec `claude auth login`.
+Comptez environ 2 minutes, jusqu'au message « Welcome to Codespaces! » dans le terminal, puis connectez Claude avec `claude auth login`.
 Le pas à pas (fenêtres de permissions et de confiance du dossier) est dans la [fiche de démarrage, voie A](commun/fiche-demarrage.md#voie-a).
 
 ### Option B · installation sur votre poste

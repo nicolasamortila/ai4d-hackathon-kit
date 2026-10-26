@@ -50,7 +50,7 @@ Ouvrez http://localhost:4000 : quatre squads, le graphe des contrats. Cliquez su
 
 ## Niveau 2 · un vrai Codespace
 
-À faire une fois les correctifs fusionnés sur GitHub. Ouvrez `jour-j/demarrage.html`, choisissez une squad, suivez les six étapes avec votre compte GitHub et un compte Claude. Notez le temps jusqu'à « ✓ Codespace prêt », les fenêtres rencontrées, et ce qui vous fait hésiter.
+À faire une fois les correctifs fusionnés sur GitHub. Ouvrez `jour-j/demarrage.html`, choisissez une squad, suivez les six étapes avec votre compte GitHub et un compte Claude. Notez le temps jusqu'à « Welcome to Codespaces! », les fenêtres rencontrées, et ce qui vous fait hésiter.
 
 ## Niveau 3 · deux machines, deux comptes Claude : comme si vous étiez deux
 
